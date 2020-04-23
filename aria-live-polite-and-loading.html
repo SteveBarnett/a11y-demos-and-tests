@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>aria live polite and loading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1 aria-hidden="true">aria live polite and loading</h1>
+
+    <p aria-hidden="true">
+      Most of the content on this page has <code>aria-hidden="true"</code> for
+      easier screen reader testing
+    </p>
+
+    <h2 aria-hidden="true">
+      With <code>aria-live="polite" role="status"</code> already in the DOM.
+    </h2>
+
+    <p aria-live="polite" role="status" id="test-region-in-dom">
+      Initial text.
+    </p>
+
+    <script>
+      const testRegionInDom = document.querySelector("#test-region-in-dom");
+
+      setTimeout(() => (testRegionInDom.innerHTML = "Loading..."), 3000);
+      setTimeout(
+        () => (testRegionInDom.innerHTML = "Additional content"),
+        3500
+      );
+    </script>
+
+    <h2 aria-hidden="true">
+      With <code>aria-live="polite" role="status"</code> dynamically added to
+      the DOM.
+    </h2>
+
+    <p id="test-region-added-to-dom">
+      Initial text.
+    </p>
+
+    <script>
+      const testRegionAddedToDOM = document.querySelector(
+        "#test-region-added-to-dom"
+      );
+
+      setTimeout(
+        () =>
+          (testRegionAddedToDOM.innerHTML =
+            '<span aria-live="polite" role="status">Loading...</span>'),
+        6000
+      );
+      setTimeout(
+        () =>
+          (testRegionAddedToDOM.innerHTML =
+            '<span aria-live="polite" role="status">Additional content</span>'),
+        6500
+      );
+    </script>
+  </body>
+</html>
