@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Keyboard-friendly drag and drop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1>Keyboard-friendly drag and drop</h1>
+
+    <p>
+      This focuses on what to do with the HTML. The CSS and JS are a bit
+      scrappy!
+    </p>
+
+    <h2>Demo</h2>
+
+    <p>a11y log:<br /><ul id="a11y-log"></ul></p>
+
+    <ul class="cards">
+      <li class="card">
+        <h3><a href="#a-link-out">Card 1 header</a></h3>
+
+        <p>Card 1 content</p>
+
+        <button
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-controls="card-1-move-menu"
+        >
+          Move card 1
+        </button>
+
+        <ul role="menu" class="hidden" id="card-1-move-menu">
+          <li role="menuitem" tabindex="0">To Page Section 1</li>
+          <li role="menuitem" tabindex="-1">To Page Section 2</li>
+          <li role="separator"></li>
+          <li role="menuitem" tabindex="-1">To Sidebar Section 1</li>
+          <li role="menuitem" tabindex="-1">To Sidebar Section 2</li>
+        </ul>
+      </li>
+      <li class="card">
+        <h3><a href="#a-link-out">Card 2 header</a></h3>
+
+        <p>Card 2 content</p>
+
+        <button
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-controls="card-2-move-menu"
+        >
+          Move card 2
+        </button>
+
+        <ul role="menu" class="hidden" id="card-1-move-menu">
+          <li role="menuitem" tabindex="0">To Page Section 1</li>
+          <li role="menuitem" tabindex="-1">To Page Section 2</li>
+          <li role="separator"></li>
+          <li role="menuitem" tabindex="-1">To Sidebar Section 1</li>
+          <li role="menuitem" tabindex="-1">To Sidebar Section 2</li>
+        </ul>
+      </li>
+      <li class="card">
+        <h3><a href="#a-link-out">Card 3 header</a></h3>
+
+        <p>Card 3 content</p>
+
+        <button
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-controls="card-3-move-menu"
+        >
+          Move card 3
+        </button>
+
+        <ul role="menu" class="hidden" id="card-1-move-menu">
+          <li role="menuitem" tabindex="0">To Page Section 1</li>
+          <li role="menuitem" tabindex="-1">To Page Section 2</li>
+          <li role="separator"></li>
+          <li role="menuitem" tabindex="-1">To Sidebar Section 1</li>
+          <li role="menuitem" tabindex="-1">To Sidebar Section 2</li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      const a11yLog = document.getElementById("a11y-log");
+      document.addEventListener("click", function (ev) {
+        // toggle aria-expanded
+        if (ev.target.getAttribute("aria-expanded")) {
+          let currentMenuButtonExpandedState = ev.target.getAttribute(
+            "aria-expanded"
+          );
+          toggledMenuButtonExpandedState =
+            currentMenuButtonExpandedState === "true" ? "false" : "true";
+          ev.target.setAttribute(
+            "aria-expanded",
+            toggledMenuButtonExpandedState
+          );
+
+          a11yLog.innerHTML = `<li>button's <span class="attr-key">aria-expanded</span> set to <span class="attr-value">${toggledMenuButtonExpandedState}</span></li>`;
+
+          // show/hide menu
+          if (toggledMenuButtonExpandedState === "true") {
+            ev.target.nextElementSibling.classList.remove("hidden");
+            a11yLog.innerHTML += '<li>menu shown by removing <span class="attr-value">"hidden"</span> <span class="attr-key">class</span></li>';
+          } else {
+            ev.target.nextElementSibling.classList.add("hidden");
+            a11yLog.innerHTML += '<li>menu hidden by adding <span class="attr-value">"hidden"</span> <span class="attr-key">class</span></li>';
+          }
+        }
+      });
+    </script>
+
+    <h2>Code sample</h2>
+
+    <h2>Important bits</h2>
+
+    <h3>The button</h3>
+
+    <ul>
+      <li>
+        Each item (to be drag-and-dropped) has a <code>button</code> with
+        <code
+          ><span class="attr-key">aria-haspopup=</span
+          ><span class="attr-value">"menu"</span></code
+        >
+        and
+        <code
+          ><span class="attr-key">aria-expanded=</span
+          ><span class="attr-value">"true|false"</span></code
+        >
+        (following
+        <a href="https://w3c.github.io/aria-practices/#menubutton"
+          >Menu Button</a
+        >).
+      </li>
+      <li>
+        If the <code>button</code> has no visible text, it
+        <strong>must</strong> have either:
+        <ul>
+          <li>text inside the button that's visually hidden;</li>
+          <li>
+            an <code><span class="attr-key">aria-label</span></code> (describing
+            the actions contained in the menu. E.g. "Move card". Don't use
+            "Expand" or similar, as that's covered by
+            <code><span class="attr-key">aria-expanded</span></code
+            >). The image can have
+            <code
+              ><span class="attr-key">aria-hidden=</span
+              ><span class="attr-value">"true"</span></code
+            >.
+          </li>
+        </ul>
+      </li>
+      <li>
+        If necessary, the button can be visually hidden, but must be shown on
+        focus (so that it's available to keyboard users).
+      </li>
+      <li>
+        When the menu is closed, focus returns to the button.
+      </li>
+      <li>
+        When the menu is opened, focus is set the first item in the menu.
+      </li>
+      <li>
+        Ideally, add
+        <code
+          ><span class="attr-key">aria-controls=</span
+          ><span class="attr-value">"id-of-the-menu"</span></code
+        >
+        to the <code>button</code>.
+      </li>
+    </ul>
+
+    <h3>The menu</h3>
+
+    <ul>
+      <li>
+        The popped-up menu has <span class="attr-key">role=</span
+        ><span class="attr-value">"menu"</span> with either:
+        <ul>
+          <li>
+            <span class="attr-key">aria-labelledby=</span
+            ><span class="attr-value">"the-id-of-the-visible-label"</span> (e.g.
+            the button text);
+          </li>
+          <li>
+            <span class="attr-key">aria-label=</span
+            ><span class="attr-value"
+              >"A description of the actions in the menu"</span
+            >
+            (.e.g Move card).
+          </li>
+        </ul>
+      </li>
+      <li>
+        Each drop target has <span class="attr-key">role=</span
+        ><span class="attr-value">"menuitem"</span> and is focusable using a
+        roving <span class="attr-key">tabindex</span>. Disabled targets have
+        <span class="attr-key">aria-disabled=</span
+        ><span class="attr-value">"true"</span>.
+      </li>
+      <li>
+        To divide up menu items (e.g. when we have multiple drop zones in
+        multiple parts of the page), use an element with
+        <span class="attr-key">role=</span
+        ><span class="attr-value">"separator"</span>. If necessary, add
+        <span class="attr-key">tabindex=</span
+        ><span class="attr-value">"-1"</span> so that it's not focusable.
+      </li>
+      <li>
+        <kbd>Down Arrow</kbd> / <kbd>Up Arrow</kbd> moves focus to the next /
+        previous item.
+      </li>
+      <li>
+        Either:
+        <ul>
+          <li>
+            <kbd>Down Arrow</kbd> / <kbd>Up Arrow</kbd> movement wraps from last
+            to first / first to last;
+          </li>
+          <li>
+            <kbd>Home</kbd> / <kbd>End</kbd> move focus to the first / last
+            item.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <kbd>Tab</kbd> (or <kbd>Shift + Tab</kbd>) moves out of the menu, and
+        closes the menu.
+      </li>
+      <li>
+        <kbd>Esc</kbd> closes the menu and returns focus to the menu button.
+      </li>
+    </ul>
+
+    <p>
+      Submenus are menus of their own and follow the same button and menu
+      pattern.
+    </p>
+  </body>
+</html>

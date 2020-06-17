@@ -104,6 +104,68 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+/* drag-and-drop */
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: solid 2px black;
+  border-radius: 0.25em;
+  padding: 0.5em;
+  display: inline-block;
+}
+
+.card a {
+  /* make it big, make it under */
+}
+
+h3 {
+  margin-top: 0;
+}
+
+code {
+  color: #000080;
+  background-color: #f8f8f8;
+  padding: 0.15em;
+}
+
+.attr-key {
+  color: #008080;
+}
+
+.attr-value {
+  color: #d14;
+}
+
+kbd {
+  background-color: #f8f8f8;
+  border: solid 1px #666;
+  border-radius: 2px;
+  padding: 0.075em;
+}
+
+[role="menu"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  background: white;
+  padding: 0.5em;
+  border: solid 1px #000;
+}
+
+[role="menu"] {
+  padding: 0.25em;
+}
+
+[role="separator"] {
+  border-top: solid 1px #666;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
