@@ -218,6 +218,74 @@ kbd {
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 0.2em;
 }
 
+/* btn-state-demo */
+
+.btn-state-demo-list li,
+.link-state-demo-list li {
+  margin-bottom: 2em;
+}
+
+.btn-state-demo-btn {
+  background-color: white;
+  color: green;
+  border: solid 0.15em green;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+
+.btn-state-demo-btn-border:focus {
+  border-color: black;
+  background-color: green;
+  color: white;
+  outline: none;
+}
+
+.btn-state-demo-btn-focus:focus {
+  outline: dotted 3px darkolivegreen;
+  outline-offset: 1px;
+}
+
+.btn-state-demo-btn-shadow:focus {
+  box-shadow: 0 0.25em 0.25em 0 rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.btn-state-demo-btn-shadline:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.btn-state-demo-btn-combo:focus {
+  background-color: green;
+  color: white;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.btn-state-demo-btn:active {
+  color: red;
+}
+
+.link-state-demo {
+  color: green;
+  text-decoration: none;
+}
+
+.link-state-demo:hover,
+.link-state-demo-focus-and-hover:focus {
+  color: black;
+  text-decoration: underline;
+}
+
+.link-state-demo-focus:focus {
+  outline: dotted 3px darkolivegreen;
+  outline-offset: 1px;
+}
+
+.link-state-demo:active {
+  color: red;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

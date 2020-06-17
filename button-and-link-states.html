@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Button and link states</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1>Button and link states</h1>
+
+    <p>Key thing: <code>button</code>s keep focus after a mouse click.</p>
+
+    <h2>Buttons</h2>
+
+    <p>
+      Text <code>color</code>> changes to red when <code>:active</code> (i.e. on
+      click)
+    </p>
+
+    <ul class="btn-state-demo-list">
+      <li>
+        <button type="button">button text</button>
+        A button with no styles
+      </li>
+      <li>
+        <button type="button" class="btn-state-demo-btn">
+          button text
+        </button>
+        A button with some basic styles. Gets browser default
+        <code>outline</code> on <code>:focus</code>.
+      </li>
+      <li>
+        <button
+          type="button"
+          class="btn-state-demo-btn btn-state-demo-btn-border"
+        >
+          button text
+        </button>
+        <code>border</code>, <code>background</code>, and text
+        <code>color</code> change on <code>:focus</code>, browser default
+        <code>outline</code> is removed.
+      </li>
+      <li>
+        <button
+          type="button"
+          class="btn-state-demo-btn btn-state-demo-btn-focus"
+        >
+          button text
+        </button>
+        <code>outline</code> changes on <code>:focus</code>. Can only be a
+        rectangle. no rounded corners.
+      </li>
+      <li>
+        <button
+          type="button"
+          class="btn-state-demo-btn btn-state-demo-btn-shadow"
+        >
+          button text
+        </button>
+        <code>box-shadow</code> added on <code>:focus</code>, browser default
+        <code>outline</code> is removed.
+      </li>
+      <li>
+        <button
+          type="button"
+          class="btn-state-demo-btn btn-state-demo-btn-shadline"
+        >
+          button text
+        </button>
+        <code>box-shadow</code> added on <code>:focus</code> that looks a bit
+        like a border, browser default <code>outline</code> is removed.
+      </li>
+      <li>
+        <button
+          type="button"
+          class="btn-state-demo-btn btn-state-demo-btn-combo"
+        >
+          button text
+        </button>
+        <code>box-shadow</code> added on <code>:focus</code>,
+        <code>background</code>, and text <code>color</code> change on
+        <code>:focus</code>, browser default <code>outline</code> is removed, .
+      </li>
+    </ul>
+
+    <h2 id="links">Links</h2>
+
+    <ul class="link-state-demo-list">
+      <li id="l-1"><a href="#l-1">link text</a> with no styles</li>
+      <li id="l-2">
+        <a href="#l-2" class="link-state-demo">link text</a> with basic styles,
+        including <code>:hover</code>. Gets browser default
+        <code>outline</code> on <code>:focus</code>.
+      </li>
+      <li id="l-3">
+        <a href="#l-3" class="link-state-demo link-state-demo-focus"
+          >link text</a
+        >
+        with <code>:focus</code> styles applied.
+      </li>
+      <li id="l-4">
+        <a
+          href="#l-4"
+          class="link-state-demo link-state-demo-focus link-state-demo-focus-and-hover"
+          >link text</a
+        >
+        with <code>:focus</code> styles applied, <code>:hover</code> styles also
+        applied on <code>focus</code>.
+      </li>
+    </ul>
+  </body>
+</html>
