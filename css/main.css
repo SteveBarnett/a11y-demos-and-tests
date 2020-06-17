@@ -166,6 +166,58 @@ kbd {
   border-top: solid 1px #666;
 }
 
+/* cards and hover and focus */
+
+.demo-cards {
+  display: flex;
+}
+
+.demo-card {
+  margin: 2em;
+  border: solid 2px #333;
+  border-radius: 1em;
+  padding: 2em;
+  flex: 0 1 20em;
+}
+
+.demo-card:focus-within,
+.demo-card:hover {
+  box-shadow: 0 0 0 0.25rem;
+}
+
+.demo-card a {
+  color: hotpink;
+  text-decoration: none;
+}
+
+.demo-card a:hover,
+.demo-card a:focus {
+  text-decoration: underline;
+  color: #915;
+  outline: none;
+}
+
+.demo-card button {
+  background-color: hotpink;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  box-shadow: rgba(0, 0, 0, 0.5) 0.15em 0.15em 0;
+}
+
+.demo-card button + button {
+  margin-left: 1em;
+}
+
+.demo-card button:hover,
+.demo-card button:focus {
+  background-color: #c48;
+  cursor: pointer;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 0.2em;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

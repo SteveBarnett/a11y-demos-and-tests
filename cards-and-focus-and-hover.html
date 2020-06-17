@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cards and focus and hover</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <h1>Cards and focus and hover</h1>
+
+    <div class="demo-cards">
+      <div class="demo-card">
+        <h2><a href=".">Card title</a></h2>
+
+        <p>
+          This card has no actions. We make the card title a link (<code
+            >a href</code
+          >).
+        </p>
+        <p>
+          With a mouse: note how the cursor only changes on the link, but the
+          whole card gets <code>hover</code> styles.
+        </p>
+        <p>
+          With a keyboard: note how the we use <code>focus-within</code> to give
+          the cards styles when the link has <code>focus</code>.
+        </p>
+      </div>
+
+      <div class="demo-card">
+        <h2>Card title</h2>
+
+        <p>
+          This card has one action. Only the <code>button</code> is interactive.
+        </p>
+        <p>
+          With a mouse: note how the cursor only changes on the
+          <code>button</code>, but the whole card gets
+          <code>hover</code> styles.
+        </p>
+        <p>
+          With a keyboard: note how the we use <code>focus-within</code> to give
+          the cards styles when the <code>button</code> has <code>focus</code>.
+        </p>
+        <p>
+          With a screen reader: note how we use visually hidden text to make the
+          <code>button</code> clearer - "Edit card title"
+        </p>
+
+        <div class="text-center">
+          <button type="button">
+            Edit<span class="sr-only"> card title</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h2><a href=".">Card title</a></h2>
+
+        <p>
+          This card has three actions. We make the card title a link (<code
+            >a href</code
+          >
+          and the two other actions <code>button</code>s.
+        </p>
+        <p>
+          With a mouse: note how the cursor only changes on the link and the
+          <code>buttons</code>, but the whole card gets
+          <code>hover</code> styles.
+        </p>
+        <p>
+          With a keyboard: note how the we use <code>focus-within</code> to give
+          the cards styles when the link or buttson have <code>focus</code>.
+        </p>
+
+        <div>
+          <button type="button">Action 1</button>
+          <button type="button">Action 2</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
