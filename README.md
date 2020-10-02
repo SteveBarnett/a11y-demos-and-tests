@@ -6,3 +6,4 @@ a11y demos and tests
 - [keyboard-friendly drag and drop](drag-and-drop.html)
 - [cards and focus and hover](cards-and-focus-and-hover.html)
 - [button and link states](button-and-link-states.html)
+- [display contents](display-contents.html)
