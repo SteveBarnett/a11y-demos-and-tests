@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="no-js wca22focus" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>WCAG 2.2 focus styles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1>WCAG 2.2 focus styles</h1>
+
+    <main id="content">
+      <h2>What to check</h2>
+
+      <ol>
+        <li>
+          Focus styles take up an area at least equivalent to at a 1px border
+          around the element.
+        </li>
+
+        <li>
+          The change of contrast of the indicator between focused and unfocused
+          states has a ratio of 3:1.
+        </li>
+
+        <li>
+          If the focus indicator does not have 3:1 contrast ratio with its
+          adjacent colors, check that it is at least 2px thick.
+        </li>
+      </ol>
+
+      <h2>Some examples</h2>
+
+      <h3>Focus style: <code>outline: solid 1px blue;</code></h3>
+
+      <button type="button" class="focus-outline">Button</button>
+
+      <ol>
+        <li>
+          ✔️ Focus area is more than a 1px border. (A default outline is around
+          the element, so it's bigger than a 1px border).
+        </li>
+        <li>✔️ Contrast of blue on white: 8.59.</li>
+        <li>✔️ Focus indicator has contrast of more than 3:1.</li>
+      </ol>
+
+      <h3>Focus style: <code>box-shadow: 0 0 0 1px blue;</code></h3>
+
+      <button type="button" class="focus-box-shadow">Button</button>
+
+      <ol>
+        <li>
+          ✔️ Focus area is more than a 1px border. (A defaolt outline is around
+          the element, so it's bigger than a 1px border).
+        </li>
+        <li>✔️ Contrast of blue on white: 8.59.</li>
+        <li>✔️ Focus indicator has contrast of more than 3:1.</li>
+      </ol>
+
+      <h3>Focus style: <code>box-shadow: 1px 1px 0 1px blue;</code></h3>
+
+      <button type="button" class="focus-box-shadow-offset">Button</button>
+
+      <ol>
+        <li>❌ Focus area is less than a 1px border.</li>
+        <li>✔️ Contrast of blue on white: 8.59.</li>
+        <li>✔️ Focus indicator has contrast of more than 3:1.</li>
+      </ol>
+
+      <h3>Focus style: <code>box-shadow: 2px 2px 0 1px blue;</code></h3>
+
+      <button type="button" class="focus-box-shadow-offset-more">Button</button>
+
+      <ol>
+        <li>
+          ✔️ Focus area is more than a 1px border (because the offset is 2px in
+          x and y directions).
+        </li>
+        <li>✔️ Contrast of blue on white: 8.59.</li>
+        <li>✔️ Focus indicator has contrast of more than 3:1.</li>
+      </ol>
+
+      <h3>Focus style: <code>box-shadow: 0 0 2px 1px blue;</code></h3>
+
+      <button type="button" class="focus-box-shadow-glow">Button</button>
+
+      <ol>
+        <li>
+          ✔️ Focus area is more than a 1px border: the blur is 2px, but it
+          actually spreads a bit more than that.
+        </li>
+        <li>
+          ✔️ The darkest part of the shadow is 1px wide and is #438af7. That's
+          3.37 with white, so it just makes the contrast requirements.
+        </li>
+        <li>✔️ Focus indicator has contrast of more than 3:1.</li>
+      </ol>
+
+      <h3>
+        Focus style: <code>box-shadow: 0 0 2px 1px rgba(255, 0, 0, 0.5);</code>
+      </h3>
+
+      <button type="button" class="focus-box-shadow-soft-glow">Button</button>
+
+      <ol>
+        <li>
+          ✔️ Focus area is more than a 1px border: the blur is 2px, but it
+          actually spreads a bit more than that.
+        </li>
+        <li>
+          ❌ The darkest part of the shadow is 1px wide and is rgba(255, 0, 0,
+          0.5), which is #aabff6. That's only 1.82 with white, so it doesn't
+          make the contrast requirements.
+        </li>
+        <li>✔️ Focus indicator has contrast of more than 3:1.</li>
+      </ol>
+
+      <h3>Focus style: <code>background-color: blue;</code></h3>
+
+      <button type="button" class="focus-background">Button</button>
+
+      <ol>
+        <li>
+          ✔️ Focus area is more than a 1px border: it's the whole element.
+        </li>
+        <li>
+          ✔️ The change from lightgrey background to blue background has a
+          contrast of 5.73. (But will fail text on backgroud color contrast! So
+          the text should change to white on focus to fix this)
+        </li>
+        <li>
+          ✔️ Focus indicator is blue, so it has contrast of 8.59 with the
+          background.
+        </li>
+      </ol>
+      <h3>
+        Focus style: <code>text-decoration: none</code> (remove underline) and
+        <code>outline: none</code>
+      </h3>
+
+      <a href="#content" class="underline">Link</a>
+
+      <ol>
+        <li>
+          ❌ Focus area is less than a 1px border: it's only as big as 1px x one
+          side of the element.
+        </li>
+        <li>
+          ✔️ The contrast changes from blue to white (the background colour), so
+          it's 8.59.
+        </li>
+        <li>
+          ❌ Focus indicator does not have a contrast of more than 3:1, and it
+          not more than 2px thick.
+        </li>
+      </ol>
+    </main>
+  </body>
+</html>

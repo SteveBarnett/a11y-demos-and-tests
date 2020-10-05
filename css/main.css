@@ -293,6 +293,52 @@ kbd {
   display: contents;
 }
 
+.wca22focus .focus-outline:focus {
+  outline: solid 1px blue;
+}
+
+.wca22focus .focus-box-shadow:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px blue;
+}
+
+.wca22focus .focus-box-shadow-offset:focus {
+  outline: none;
+  box-shadow: 1px 1px 0 1px blue;
+}
+
+.wca22focus .focus-box-shadow-offset-more:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 1px blue;
+}
+
+.wca22focus .focus-box-shadow-glow:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px blue;
+}
+
+.wca22focus .focus-box-shadow-soft-glow:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 255, 0.5);
+}
+
+.wca22focus .focus-background {
+  background-color: lightgrey;
+  padding: 0.1rem 0.25rem;
+  border: solid 1px black;
+}
+
+.wca22focus .focus-background:focus {
+  outline: none;
+  background-color: blue;
+}
+
+.wca22focus .underline:focus {
+  outline: none;
+  text-decoration: none;
+  color: blue !important;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
