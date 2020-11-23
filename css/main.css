@@ -170,6 +170,7 @@ kbd {
 
 .demo-cards {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .demo-card {
