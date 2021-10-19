@@ -219,6 +219,19 @@ kbd {
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 0.2em;
 }
 
+.demo-card-stretch {
+  position: relative;
+}
+
+.demo-card-stretch a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 /* btn-state-demo */
 
 .btn-state-demo-list li,
