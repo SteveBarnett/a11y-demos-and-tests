@@ -13,7 +13,7 @@
     <h1>Cards and focus and hover</h1>
 
     <div class="demo-cards">
-      <div class="demo-card">
+      <div class="demo-card" id="no-actions">
         <h2><a href=".">Card title</a></h2>
 
         <p>
@@ -31,7 +31,7 @@
         </p>
       </div>
 
-      <div class="demo-card">
+      <div class="demo-card" id="one-action">
         <h2>Card title</h2>
 
         <p>
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <div class="demo-card">
+      <div class="demo-card" id="three-actions">
         <h2><a href=".">Card title</a></h2>
 
         <p>
@@ -83,7 +83,7 @@
         </div>
       </div>
 
-      <div class="demo-card" role="button" tabindex="0">
+      <div class="demo-card" role="button" tabindex="0" id="naughty">
         <h2><a href=".">Bad card title</a></h2>
 
         <p>
@@ -99,6 +99,24 @@
           <button type="button">Action 1</button>
           <button type="button">Action 2</button>
         </div>
+      </div>
+
+      <div class="demo-card demo-card-stretch" id="stretch">
+        <h2><a href=".">Card title</a></h2>
+
+        <p>
+          This card has no actions. We make the card title a link (<code
+            >a href</code
+          >). We use <code>content</code> in an <code>after</code> to make the clickable area the size of the card.
+        </p>
+        <p>
+          With a mouse: note how the cursor only changes on the link, but the
+          whole card gets <code>hover</code> styles.
+        </p>
+        <p>
+          With a keyboard: note how the we use <code>focus-within</code> to give
+          the cards styles when the link has <code>focus</code>.
+        </p>
       </div>
     </div>
   </body>
