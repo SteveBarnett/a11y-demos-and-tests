@@ -8,3 +8,4 @@ a11y demos and tests
 - [button and link states](button-and-link-states.html)
 - [display contents](display-contents.html)
 - [WCAG 2.2 focus styles](wcag-22-focus-styles.html)
+- [Screen readers and inputs, disabled and readonly](screen-readers-and-inputs-disabled-and-readonly.html)
