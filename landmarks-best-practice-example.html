@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Landmarks best practice example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <a href="main">Skip to main content</a>
+    <!-- First link on the page, points to the main element -->
+
+    <!-- All page content, except the skip link, is inside a landmark -->
+
+    <header>
+      <ul>
+        <li><span aria-hidden="true">🧩</span> <code>header</code> element</li>
+        <li>
+          <span aria-hidden="true">🤖</span> implied <code>role="banner"</code>
+        </li>
+        <li>
+          <span aria-hidden="true">🔝</span> should be top-level (not contained
+          inside another landmark)
+        </li>
+        <li><span aria-hidden="true">🔢</span> at most one</li>
+        <li>
+          <span aria-hidden="true">🤔</span> site-oriented content rather than
+          page-specific
+        </li>
+      </ul>
+    </header>
+
+    <nav>
+      <ul>
+        <li><span aria-hidden="true">🧩</span> <code>nav</code> element</li>
+        <li>
+          <span aria-hidden="true">🤖</span> implied
+          <code>role="navigation"</code>
+        </li>
+        <li>
+          <span aria-hidden="true">🔝</span> should be top-level (not contained
+          inside another landmark)
+        </li>
+        <li>
+          <span aria-hidden="true">🤔</span> should contain a list
+          (<code>ul</code>) of links
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <ul>
+        <li><span aria-hidden="true">🧩</span> <code>main</code> element</li>
+        <li>
+          <span aria-hidden="true">🤖</span> implied <code>role="main"</code>
+        </li>
+        <li><span aria-hidden="true">🔢</span> one and only one</li>
+        <li>
+          <span aria-hidden="true">🔝</span> should be top-level (not contained
+          inside another landmark)
+        </li>
+        <li><span aria-hidden="true">🤔</span> target of skip link</li>
+      </ul>
+    </main>
+
+    <aside>
+      <ul>
+        <li><span aria-hidden="true">🧩</span> <code>aside</code> element</li>
+        <li>
+          <span aria-hidden="true">🤖</span> implied
+          <code>role="complementary"</code>
+        </li>
+        <li>
+          <span aria-hidden="true">🔝</span> should be top-level (not contained
+          inside another landmark)
+        </li>
+        <li>
+          <span aria-hidden="true">🤔</span> each occurence must have a unique
+          accessible name
+        </li>
+        <li>
+          <span aria-hidden="true">🤔</span> remains meaningful when separated
+          from the main content
+        </li>
+      </ul>
+    </aside>
+
+    <footer>
+      <ul>
+        <li><span aria-hidden="true">🧩</span> <code>Footer</code></li>
+        <li>
+          <span aria-hidden="true">🤖</span> implied
+          <code>role="contentinfo"</code>
+        </li>
+        <li>
+          <span aria-hidden="true">🔝</span> should be top-level (not contained
+          inside another landmark)
+        </li>
+        <li><span aria-hidden="true">🔢</span> at most one</li>
+        <li><span aria-hidden="true">🤔</span> information about the page</li>
+      </ul>
+    </footer>
+  </body>
+</html>

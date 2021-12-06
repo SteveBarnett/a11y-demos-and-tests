@@ -9,3 +9,4 @@ a11y demos and tests
 - [display contents](display-contents.html)
 - [WCAG 2.2 focus styles](wcag-22-focus-styles.html)
 - [Screen readers and inputs, disabled and readonly](screen-readers-and-inputs-disabled-and-readonly.html)
+- [Landmarks best practice example page](landmarks-best-practice-example.html)
