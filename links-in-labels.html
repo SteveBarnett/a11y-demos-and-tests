@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Links in labels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Links in labels</h1>
+
+      <p>TL;DR: it's not ideal because it can make the accessible names sound funny (Understable), especially in "opens in a new tab" cases. But it's still functional (Operable).<p>
+
+
+      <form>
+          <input type="checkbox" id="tsandcs">
+          <label for="tsandcs">I accept the <a href="https://en.wikipedia.org/wiki/Top_Cat" target="_blank">Ts and Cs <img src="new-tab.png" alt="Opens in new tab" /></a></label>
+
+          <p><span aria-hidden="true">☝️</span> Tabbing through sounds like:</p>
+          <ul>
+            <li>I accept the Ts and Cs Opens in new tab, unticked, checkbox</li>
+            <li>Link, Ts and Cs Opens in new tab</li>
+          </ul>
+      </form>
+    </main>
+  </body>
+</html>
