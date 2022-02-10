@@ -13,29 +13,39 @@
 
 	<h1>Screen readers and inputs, disabled and readonly</h1>
 
+	<div aria-hidden="true">
+		<p>Note: some content on this page has had <code>aria-hidden="true"</code> for more precise testing.</p>
+	</div>
+
 	<label for="input">First name</label>
 	<input type="text" id="input" />
 
-	<p>Not <code>disabled</code>, not <code>readonly</code>.</p>
-	<p>This sounds something like "First name, edit text"</p>
-	<p>When you type printable characters (letters, punctuation, space) you hear the characters.</p>
+	<div aria-hidden="true">
+		<p>Not <code>disabled</code>, not <code>readonly</code>.</p>
+		<p>This sounds something like "First name, edit text"</p>
+		<p>When you type printable characters (letters, punctuation, space) you hear the characters.</p>
 
-	<hr />
+		<hr />
+	</div>
 
 	<label for="input-disabled">Middle name</label>
 	<input type="text" id="input-disabled" disabled />
 
-	<p>Set to <code>disabled</code>.</p>
-	<p>This doesn't receive keyboard focus! But in reading mode, this sounds something like "Middle name, dimmed, edit text"</p>
+	<div aria-hidden="true">
+		<p>Set to <code>disabled</code>.</p>
+		<p>This doesn't receive keyboard focus! But in reading mode, this sounds something like "Middle name, dimmed, edit text"</p>
 
-	<hr />
+		<hr />
+	</div>
 
 	<label for="input-readonly">Last name</label>
 	<input type="text" id="input-readonly" readonly aria-readonly="true" />
 
-	<p>Set to <code>readonly</code>.</p>
-	<p>This sounds something like "Last name, edit text"</p>
-	<p>Note how it doesn't mention the readonly status. However, when you type printable characters (letters, punctuation, space) you don't hear the characters. So it is possible to infer that nothing is happening...</p>
+	<div aria-hidden="true">
+		<p>Set to <code>readonly</code>.</p>
+		<p>This sounds something like "Last name, edit text"</p>
+		<p>Note how it doesn't mention the readonly status. However, when you type printable characters (letters, punctuation, space) you don't hear the characters. So it is possible to infer that nothing is happening...</p>
+	</div>
 
   </body>
 </html>
