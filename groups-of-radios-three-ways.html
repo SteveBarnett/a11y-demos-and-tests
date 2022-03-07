@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Groups of radios, three ways</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+
+	<h1>Groups of radios, three ways</h1>
+
+	<div aria-hidden="true">
+		<p>Note: some content on this page has had <code>aria-hidden="true"</code> added for more precise testing.</p>
+	</div>
+
+	<h2>Using <code>fieldset</code> and <code>legend</code></h2>
+
+	<fieldset>
+		<legend>What's your favourite colour?</legend>
+		<input type="radio" id="red1" name="favouritecolour1" />
+		<label for="red1">Red</label>
+		<br>
+		<input type="radio" id="green1" name="favouritecolour1" />
+		<label for="green1">Green</label>
+		<br>
+		<input type="radio" id="blue1" name="favouritecolour1" />
+		<label for="blue1">Blue</label>
+		<br>
+	</fieldset>
+
+	<div aria-hidden="true">
+		<p>This sounds something like: "Red, radio button, 1 of 3, What's your favourite colour?, group"</p>
+	</div>
+
+	<h2>Using <code>div</code>s</h2>
+
+	<div>
+		<div>What's your favourite colour?</div>
+		<input type="radio" id="red2" name="favouritecolour2" />
+		<label for="red2">Red</label>
+		<br>
+		<input type="radio" id="green2" name="favouritecolour2" />
+		<label for="green2">Green</label>
+		<br>
+		<input type="radio" id="blue2" name="favouritecolour2" />
+		<label for="blue2">Blue</label>
+		<br>
+	</div>
+
+	<div aria-hidden="true">
+		<p>This sounds something like: "Red, radio button, 1 of 3"</p>
+	</div>
+
+	<h2>Using <code>div</code> with <code>role</code> and <code>aria-labelledby</code></h2>
+
+	<div role="radiogroup" aria-labelledby="fish">
+		<div id="fish">What's your favourite colour?</div>
+		<input type="radio" id="red3" name="favouritecolour3" />
+		<label for="red3">Red</label>
+		<br>
+		<input type="radio" id="green3" name="favouritecolour3" />
+		<label for="green3">Green</label>
+		<br>
+		<input type="radio" id="blue3" name="favouritecolour3" />
+		<label for="blue3">Blue</label>
+		<br>
+	</div>
+
+	<div aria-hidden="true">
+		<p>This sounds something like: "Red, radio button, 1 of 3, What's your favourite colour?, group"</p>
+	</div>
+
+	
+  </body>
+</html>
