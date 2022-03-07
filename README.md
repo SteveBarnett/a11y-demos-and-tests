@@ -10,3 +10,4 @@ a11y demos and tests
 - [WCAG 2.2 focus styles](wcag-22-focus-styles.html)
 - [Screen readers and inputs, disabled and readonly](screen-readers-and-inputs-disabled-and-readonly.html)
 - [Landmarks best practice example page](landmarks-best-practice-example.html)
+- [Groups of radios, three ways](groups-of-radios-three-ways.html)
