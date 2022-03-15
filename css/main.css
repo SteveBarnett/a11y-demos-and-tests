@@ -545,3 +545,17 @@ blockquote {
   margin-left: 0;
   border-left: solid 2px gray;
 }
+
+.sounds-like {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.skinny {
+  max-width: 60em;
+  margin: 0 auto;
+}
