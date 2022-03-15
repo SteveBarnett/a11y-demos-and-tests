@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accessible names and descriptions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <h1>Accessible names and descriptions</h1>
+
+    <p aria-hidden="true">
+      Note: some content on this page has had
+      <code>aria-hidden="true"</code> added for more precise testing.
+    </p>
+
+    <h2>Accessible name</h2>
+
+    <div class="form-example">
+      <label for="first">Favourite colour</label><br />
+      <input id="first" />
+    </div>
+
+    <p aria-hidden="true">
+      This sounds something like: <blockquote>"Favourite colour, edit text"</blockquote>
+    </p>
+
+    <p aria-hidden="true">
+      <span class="codeish">Code:</span> we add a <code>for</code> attribute on
+      the <code>label</code> element. We set the value to match the
+      <code>id</code> attribute on the <code>input</code> element to give the
+      field an <strong>accessible name</strong>.
+    </p>
+
+    <h2>Accessible description</h2>
+
+    <div class="form-example">
+      <label for="second">Favourite colour</label><br />
+      <input id="second" aria-describedby="help-text" />
+      <div class="help-text" id="help-text">
+        Not your second favourite colour
+      </div>
+    </div>
+
+    <p aria-hidden="true">
+      This sounds something like: <blockquote>"Favourite colour, edit text. Not your second
+      favourite colour."</blockquote> Note: there's a short pause between the accessible name
+      and the accessible description.
+    </p>
+
+    <p aria-hidden="true">
+      <span class="codeish">Code:</span> we add an
+      <code>aria-describedby</code> attribute on the <code>input</code> element.
+      We set the value to match the <code>id</code> attribute on the help text
+      element to give the field an <strong>accessible description</strong>.
+    </p>
+
+    <h2>Field error with validation message</h2>
+
+    <p aria-hidden="true">
+      Validation messages are a special case of accessible description. We can
+      have multiple accessible descriptions, and we can choose the order they
+      are announced in. We also mark the field itself as having an error.
+    </p>
+
+    <div class="form-example">
+      <label for="third">Favourite colour</label><br />
+      <input
+        id="third"
+        aria-describedby="help-text error-text"
+        aria-invalid="true"
+      />
+      <div class="help-text" id="help-text">
+        Not your second favourite colour
+      </div>
+      <div class="error-text" id="error-text">
+        Please enter your favourite colour
+      </div>
+    </div>
+
+    <p aria-hidden="true">
+      This sounds something like: <blockquote>"Favourite colour, invalid data, edit text.
+      Not your second favourite colour Please enter your favourite colour"</blockquote>.
+      Note: there's a short pause between the accessible name and the accessible
+      descriptions, but not between the two accessible descriptions.
+    </p>
+
+    <p aria-hidden="true">
+      <span class="codeish">Code:</span> we set the value of the
+      <code>aria-describedby</code> attribute to both the
+      <code>id</code> attribute on the help text element <em>and</em> the
+      <code>id</code> attribute of the error text (separated by a space) to give
+      the field two <strong>accessible descriptions</strong>: some help text and
+      some error text.
+    </p>
+  </body>
+</html>

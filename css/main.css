@@ -517,3 +517,31 @@ kbd {
     page-break-after: avoid;
   }
 }
+
+.form-example {
+  margin: 2rem 0;
+}
+
+.help-text {
+  font-size: 0.9em;
+}
+
+[aria-invalid="true"] {
+  border: solid 2px firebrick;
+}
+
+.error-text {
+  color: firebrick;
+  font-size: 0.9em;
+}
+
+.codeish {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+blockquote {
+  padding: 1rem;
+  margin-left: 0;
+  border-left: solid 2px gray;
+}
