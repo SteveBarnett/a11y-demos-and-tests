@@ -12,3 +12,4 @@ a11y demos and tests
 - [Landmarks best practice example page](landmarks-best-practice-example.html)
 - [Groups of radios, three ways](groups-of-radios-three-ways.html)
 - [Masked](masked.html)
+- [Accessible names and descriptions](accessible-names-and-descriptions.html)
