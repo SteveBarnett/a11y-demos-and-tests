@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Error message with roles and describedbys</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1 aria-hidden="true">Error message with roles and describedbys</h1>
+
+    <p aria-hidden="true">
+      Most of the content on this page has <code>aria-hidden="true"</code> for
+      easier screen reader testing
+    </p>
+
+    <p aria-hidden="true">
+      Note: all error messages are added on <code>blur</code>: when focus leaves the field.
+    </p>
+
+    <h2 aria-hidden="true">Error message using <code>aria-describedby</code></h2>
+
+    <p aria-hidden="true">The error message is announced when the field gains focus and the error message is shown.</p>
+
+    <label for="ex1">Name 1</label><br/>
+    <input id="ex1" aria-describedby="ex1-em" aria-required="true">
+    <div id="ex1-em" class="error-text hidden">Error 1: enter your name 1</div>
+
+    <h2 aria-hidden="true">Error message using <code>role="alert"</code></h2>
+
+    <p aria-hidden="true">The error message is announced as soon as it's added.</p>
+
+    <label for="ex2">Name 2</label><br/>
+    <input id="ex2" aria-required="true">
+    <div id="ex2-em" role="alert" class="error-text hidden">Error 2: enter your name 2</div>
+
+    <h2 aria-hidden="true">Error message using <code>aria-describedby</code> and <code>role="alert"</code></h2>
+
+    <p aria-hidden="true">The error message is announced soon after it's added. It is not announced when the field gains focus, even though the code has the <code>aria-describedby</code> linking the field and the message.</p>
+
+    <label for="ex3">Name 3</label><br/>
+    <input id="ex3" aria-required="true">
+    <div id="ex3-em" role="alert" class="error-text hidden">Error 3: enter your name 3</div>
+
+    <hr>
+
+    <p aria-hidden="true">A button at the end to have something to tab to</p>
+
+    <button>Save</button>
+
+    <script>
+      // Very rough code just to get the errors showing
+      const requiredInputs = document.querySelectorAll('[aria-required="true"]');
+      requiredInputs.forEach((requireInput) => {
+        requireInput.addEventListener('blur', function() {
+          this.nextElementSibling.classList.remove('hidden');
+        });
+      })
+    </script>
+  </body>
+</html>
