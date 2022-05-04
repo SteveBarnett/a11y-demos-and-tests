@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Buttons and loading and disabling and focus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <style>
+      *:focus {
+        outline: solid 5px hotpink !important;
+      }
+    </style>
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1 aria-hidden="true">Buttons and loading and disabling and focus</h1>
+
+    <p aria-hidden="true">
+      Most of the content on this page has <code>aria-hidden="true"</code> for
+      easier screen reader testing
+    </p>
+
+    <p aria-hidden="true">
+      Bright pink focus styles added for clarity.
+    </p>
+
+    <hr />
+
+    <p id="helpful" tabindex="-1">10 people found this review helpful.</p>
+
+    <button id="one">Helpful</button>
+
+    <p id="voted-message" hidden><span id="voted" tabindex="-1">You voted this review helpful!</span> <button id="undo">Undo</button></p>
+
+    <script>
+      // Very rough!
+      const button = document.getElementById("one");
+      const helpful = document.getElementById("helpful");
+      const votedMessage = document.getElementById("voted-message");
+      const voted = document.getElementById("voted");
+      const undo = document.getElementById("undo");
+
+      button.addEventListener('click', () => {
+        button.innerText = "Loading...";
+        button.setAttribute('disabled', '');
+        setTimeout(
+          () => {
+            votedMessage.removeAttribute('hidden'); // one of many ways to show / hide
+            voted.focus() // if target is not interactive, it needs a tabindex="-1" to let it receive focus
+            button.setAttribute('hidden', '');
+          },
+          1000
+        );
+      });
+
+      undo.addEventListener('click', () => {
+        votedMessage.setAttribute('hidden', '');
+        button.removeAttribute('hidden');
+        setTimeout(
+          () => {
+            button.innerText = "Helpful";
+            button.removeAttribute('disabled');
+            button.focus();
+          },
+          1000
+        );
+      });
+    </script>
+  </body>
+</html>

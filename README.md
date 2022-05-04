@@ -14,3 +14,4 @@ a11y demos and tests
 - [Masked](masked.html)
 - [Accessible names and descriptions](accessible-names-and-descriptions.html)
 - [Error message with roles and describedbys](errors-and-roles-and-describedbys.html)
+- [Buttons and loading and disabling and focus](buttons-and-loading-and-disabling-and-focus.html)
