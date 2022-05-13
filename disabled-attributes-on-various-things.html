@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Disabled attributes on various things</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1 aria-hidden="true">Error message with roles and describedbys</h1>
+
+    <p aria-hidden="true">
+      Most of the content on this page has <code>aria-hidden="true"</code> for
+      easier screen reader testing
+    </p>
+
+    <hr />
+
+    <p aria-hidden="true">
+      Some text inputs. Middle name is <code>disabled</code>.
+    </p>
+
+    <label for="input">First name</label>
+    <input type="text" id="input" />
+    <br /><br />
+
+    <label for="input-disabled">Middle name</label>
+    <input type="text" id="input-disabled" disabled />
+    <br /><br />
+
+    <label for="input-ln">Last name</label>
+    <input type="text" id="input-ln" />
+
+    <hr />
+
+    <p aria-hidden="true">
+      A select. Middle name is <code>disabled</code>.
+    </p>
+
+    <label for="sn">Name to use</label>
+    <select id="sn">
+      <option>First name</option>
+      <option disabled>Middle name</option>
+      <option>Last name</option>
+    </select>
+
+    <hr />
+
+    <p aria-hidden="true">
+      Some radio buttons. Middle name is <code>disabled</code>.
+    </p>
+
+    <fieldset>
+      <legend>Name to use</legend>
+
+      <input type="radio" name="rn" id="rnfn">
+      <label for="rnfn">First name</label>
+      <br />
+
+      <input type="radio" name="rn" id="rnmn"disabled>
+      <label for="rnmn">Middle name</label>
+      <br />
+
+      <input type="radio" name="rn" id="rnkn">
+      <label for="rnln">Last name</label>
+    </fieldset>
+
+  </body>
+</html>
