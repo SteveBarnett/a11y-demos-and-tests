@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example 3 – Accessible data visualisation: text alternatives</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body class="dv">
+  <h1>Example 3</h1>
+
+  <button id="toggle" type="button"><span id="show-table">Show table</span><span id="show-chart">Show chart</span></button>
+
+  <img id="chart" src="img/income-chart.png" alt="Bar chart of monthly income from January to February. A table of the chart data immediately follows this image." />
+
+  <table id="table">
+    <caption>Monthly income from January to February</caption>
+    <tbody>
+      <tr>
+        <th>Month</th>
+        <th>Income</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td class="numeric-data">100</td>
+      </tr>
+      <tr>
+        <td>February</td>
+        <td class="numeric-data">200</td>
+      </tr>
+      <tr>
+        <td>March</td>
+        <td class="numeric-data">300</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const toggle = document.getElementById('toggle');
+    const showTable = document.getElementById('show-table');
+    const showChart = document.getElementById('show-chart');
+    const chart = document.getElementById('chart');
+    const table = document.getElementById('table');
+
+    table.classList.add('hide');
+    showChart.classList.add('hide');
+
+    toggle.addEventListener('click', () => {
+      showTable.classList.toggle('hide');
+      showChart.classList.toggle('hide');
+      table.classList.toggle('hide');
+      chart.classList.toggle('hide');
+    })
+  </script>
+  </body>
+</html>

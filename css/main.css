@@ -353,6 +353,94 @@ kbd {
   color: blue !important;
 }
 
+.form-example {
+  margin: 2rem 0;
+}
+
+.help-text {
+  font-size: 0.9em;
+}
+
+[aria-invalid="true"] {
+  border: solid 2px firebrick;
+}
+
+.error-text {
+  color: firebrick;
+  font-size: 0.9em;
+}
+
+.codeish {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+blockquote {
+  padding: 1rem;
+  margin-left: 0;
+  border-left: solid 2px gray;
+}
+
+.sounds-like {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.skinny {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+/* for data vis */
+.dv button, .dv img {
+  display: block;
+}
+
+.dv button:focus {
+  outline: 2px solid darkblue;
+  outline-offset: 2px;
+}
+
+.dv button, .dv img, .dv table {
+    clear: both;
+    margin-top: 2rem;
+}
+
+.dv .hide {
+  display: none;
+}
+
+table {
+  margin-bottom: 1em;
+}
+
+caption {
+  margin-bottom: 1em;
+  font-weight:  bold;
+}
+
+td {
+  border-top: 1px solid #000;
+}
+
+td,
+th {
+  padding: 0.5em;
+  line-height: 1;
+}
+
+th {
+  text-align: left;
+}
+
+.numeric-data {
+  text-align: right;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -516,46 +604,4 @@ kbd {
   h3 {
     page-break-after: avoid;
   }
-}
-
-.form-example {
-  margin: 2rem 0;
-}
-
-.help-text {
-  font-size: 0.9em;
-}
-
-[aria-invalid="true"] {
-  border: solid 2px firebrick;
-}
-
-.error-text {
-  color: firebrick;
-  font-size: 0.9em;
-}
-
-.codeish {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-blockquote {
-  padding: 1rem;
-  margin-left: 0;
-  border-left: solid 2px gray;
-}
-
-.sounds-like {
-  font-family: "Courier New", Courier, monospace;
-  background-color: #333;
-  color: #fff;
-  border-radius: 0.25em;
-  padding: 0.5em 1em;
-  margin: 1em 0;
-}
-
-.skinny {
-  max-width: 60em;
-  margin: 0 auto;
 }
