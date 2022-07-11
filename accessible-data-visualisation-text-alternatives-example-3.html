@@ -14,9 +14,10 @@
   <body class="dv">
   <h1>Example 3</h1>
 
-  <button id="toggle" type="button"><span id="show-table">Show table</span><span id="show-chart">Show chart</span></button>
 
-  <img id="chart" src="img/income-chart.png" alt="Bar chart of monthly income from January to March. A table of the chart data immediately follows this chart." />
+  <img src="img/income-chart.png" alt="Bar chart of monthly income from January to March. A button to show a table of the chart data immediately follows this chart." />
+
+  <button type="button" id="toggle" aria-pressed="false">Show table</button>
 
   <table id="table">
     <caption>Monthly income from January to March</caption>
@@ -42,19 +43,15 @@
 
   <script>
     const toggle = document.getElementById('toggle');
-    const showTable = document.getElementById('show-table');
-    const showChart = document.getElementById('show-chart');
-    const chart = document.getElementById('chart');
     const table = document.getElementById('table');
 
     table.classList.add('hide');
-    showChart.classList.add('hide');
 
     toggle.addEventListener('click', () => {
-      showTable.classList.toggle('hide');
-      showChart.classList.toggle('hide');
+      currentPressed = toggle.getAttribute('aria-pressed').toString();
+      console.log(currentPressed);
+      toggle.setAttribute('aria-pressed', currentPressed == 'true' ? 'false' : 'true');
       table.classList.toggle('hide');
-      chart.classList.toggle('hide');
     })
   </script>
   </body>
