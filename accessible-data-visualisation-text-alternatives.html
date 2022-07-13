@@ -2,7 +2,7 @@
 <html class="no-js" lang="en-nz">
   <head>
     <meta charset="utf-8" />
-    <title>Accessible data visualisation: text alternatives</title>
+    <title>Accessible data visualisation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="./css/normalize.css" />
@@ -14,9 +14,33 @@
   <body>
   <h1>Accessible data visualisation</h1>
 
-  <h2>Charts with table text alternatives</h2>
+  <h2 aria-hidden="true">Testing notes</h2>
 
-  <p aria-hidden="true">In the list below, the text after the link has been <code>aria-hidden="true"</code> for testing purposes.</p>
+  <p aria-hidden="true">All text except headings and links have been <code>aria-hidden="true"</code> for testing purposes.</p>
+
+  <div aria-hidden="true">
+    <p>Context: we have examples of just a chart. Usually they'll be in a page with other stuff. The charts and data are auto-generated and updated, so we can't supply a human-written text alternative.</p>
+
+    <p>Testing order:</p>
+
+    <ol>
+      <li>Example 3: table best? after the chart? Name for button? Button or something else?</li>
+      <li>Example 4: alt text good? Link text good?</li>
+      <li>Example 7: tabs good? role? text? region?</li>
+      <li>Example 8: arrow keys good? role? text? region?</li>
+    </ol>
+
+    <p>If there's time:</p>
+
+    <ol>
+      <li>Example 1: alt text good?</li>
+      <li>Example 2: alt text good?</li>
+      <li>Example 5: leaving SVG text readable is bad?</li>
+      <li>Example 6: hiding SVG text is good?</li>
+    </ol>
+  </div>
+
+  <h2>Charts with table text alternatives</h2>
 
   <ul>
     <li><a href="accessible-data-visualisation-text-alternatives-example-1.html">Example 1</a> <span aria-hidden="true">Before the chart</span></li>
