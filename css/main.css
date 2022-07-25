@@ -400,19 +400,50 @@ blockquote {
   display: block;
 }
 
-.dv button:focus {
-  outline: 2px solid darkblue;
+.dv button:focus,
+.dv2 button:focus {
+  outline: 2px solid hotpink;
   outline-offset: 2px;
 }
 
-.dv button, .dv img, .dv table {
+.dv button, .dv img, .dv table,
+.dv2 table {
     clear: both;
     margin-top: 2rem;
 }
 
-.dv .hide {
+.dv .hide, .dv2 .hide {
   display: none;
 }
+
+[role="switch"] {
+  padding: 0;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+}
+
+[role="switch"] span {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+[role="switch"] :first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+[role="switch"] :last-child {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+[role="switch"][aria-checked="true"] :first-child, 
+[role="switch"][aria-checked="false"] :last-child {
+  background: #1f77b4 ;
+  color: #fff;
+}
+
+/*https://inclusive-components.design/toggle-button/*/
 
 table {
   margin-bottom: 1em;
