@@ -18,3 +18,4 @@ a11y demos and tests
 - [Disabled attributes on various things](disabled-attributes-on-various-things.html)
 - [Accessible data visualisation: text alternatives](accessible-data-visualisation-text-alternatives.html)
 - [It's about time](its-about-time.html)
+- [What the focus](what-the-focus.html)
