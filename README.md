@@ -20,3 +20,4 @@ a11y demos and tests
 - [It's about time](its-about-time.html)
 - [What the focus](what-the-focus.html)
 - [aria-describedby flattening things](aria-describedby-flattening-things.html)
+- [Tables and links and things](tables-and-links-and-things.html)

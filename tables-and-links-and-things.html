@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tables and links and things</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Tables and links and things</h1>
+
+      <div aria-hidden="true">
+        <p>Note: some content on this page has had <code>aria-hidden="true"</code> added for more precise testing.</p>
+      </div>
+
+      <h2>Table where one column has a linked cell</h2>
+
+      <ul aria-hidden="true" style="list-style: none; padding-left: 0;">
+        <li>✔ Link text makes sense</li>
+        <li>✔ One link per invoice</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>Number</th>
+          <th>To</th>
+          <th>Due date</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td><a href="tables-and-links-and-things.html">INV-123</a></td>
+          <td>Susan</td>
+          <td>1 Jan 2023</td>
+          <td>123.00</td>
+        </tr>        
+        <tr>
+          <td><a href="tables-and-links-and-things.html">INV-456</a></td>
+          <td>Jeff</td>
+          <td>1 Feb 2023</td>
+          <td>456.00</td>
+        </tr>
+        <tr>
+          <td><a href="tables-and-links-and-things.html">INV-789</a></td>
+          <td>Susan</td>
+          <td>1 Mar 2023</td>
+          <td>789.00</td>
+        </tr>
+      </table>
+
+      <h2>Table where every cell is linked</h2>
+
+      <ul aria-hidden="true" style="list-style: none; padding-left: 0;">
+        <li>🙅 Link text doesn't make sense</li>
+        <li>🙅 Multiple links per invoice</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>Number</th>
+          <th>To</th>
+          <th>Due date</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td><a href="tables-and-links-and-things.html">INV-123</a></td>
+          <td><a href="tables-and-links-and-things.html">Susan</a></td>
+          <td><a href="tables-and-links-and-things.html">1 Jan 2023</a></td>
+          <td><a href="tables-and-links-and-things.html">123.00</a></td>
+        </tr>        
+        <tr>
+          <td><a href="tables-and-links-and-things.html">INV-456</a></td>
+          <td><a href="tables-and-links-and-things.html">Jeff</a></td>
+          <td><a href="tables-and-links-and-things.html">1 Feb 2023</a></td>
+          <td><a href="tables-and-links-and-things.html">456.00</a></td>
+        </tr>
+        <tr>
+          <td><a href="tables-and-links-and-things.html">INV-789</a></td>
+          <td><a href="tables-and-links-and-things.html">Susan</a></td>
+          <td><a href="tables-and-links-and-things.html">1 Mar 2023</a></td>
+          <td><a href="tables-and-links-and-things.html">789.00</a></td>
+        </tr>
+      </table>
+
+      <h2>Table where rows are links</h2>
+
+      <ul aria-hidden="true" style="list-style: none; padding-left: 0;">
+        <li>🙅 Row-as-link text doesn't make sense</li>
+        <li>🙅 Rows have disappeared (they've become links)</li>
+      </ul>
+
+      <table>
+        <tr>
+          <th>Number</th>
+          <th>To</th>
+          <th>Due date</th>
+          <th>Amount</th>
+        </tr>
+        <tr tabindex="0" role="link">
+          <td><a href="tables-and-links-and-things.html">INV-123</a></td>
+          <td>Susan</td>
+          <td>1 Jan 2023</td>
+          <td>123.00</td>
+        </tr>        
+        <tr tabindex="0" role="link">
+          <td><a href="tables-and-links-and-things.html">INV-456</a></td>
+          <td>Jeff</td>
+          <td>1 Feb 2023</td>
+          <td>456.00</td>
+        </tr>
+        <tr tabindex="0" role="link">
+          <td><a href="tables-and-links-and-things.html">INV-789</a></td>
+          <td>Susan</td>
+          <td>1 Mar 2023</td>
+          <td>789.00</td>
+        </tr>
+      </table>
+
+    </main>
+  </body>
+</html>
