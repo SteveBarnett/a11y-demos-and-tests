@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>aria-describedby flattening things</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <main>
+      <h1>aria-describedby flattening things</h1>
+
+      <p aria-hidden="true">
+      Most of the content on this page has <code>aria-hidden="true"</code> for
+      easier screen reader testing
+      </p>
+
+      <h2 aria-hidden="true">Help text: just text</h2>
+
+      <p id="ex1-em" class="card">If the address entered is different to the one in your organisation settings, your organisation address will be updated.</p>
+
+      <br>
+
+      <label for="ex1">Find your address</label><br/>
+      <input type="search" id="ex1" aria-describedby="ex1-em"> 
+
+      <p aria-hidden="true">Sounds something like:</p>
+      <blockquote class="sounds-like">Find your address, search text field.<br>If the address entered is different to the one in your organisation settings, your organisation address will be updated.</blockquote>
+
+      <hr aria-hidden="true" />
+
+      <h2 aria-hidden="true">Help text: text with a link</h2>
+
+      <p id="ex2-em" class="card">If the address entered is different to the one in your organisation settings, your <a href="aria-describedby-flattening-things.html">organisation address</a> will be updated.</p>
+
+      <br>
+
+      <label for="ex2">Find your address</label><br/>
+      <input type="search" id="ex2" aria-describedby="ex2-em">
+
+      <p aria-hidden="true">Sounds something like:</p>
+      <blockquote class="sounds-like">Find your address, search text field.<br>If the address entered is different to the one in your organisation settings, your organisation address will be updated.</blockquote>
+
+      <hr aria-hidden="true" />
+
+      <h2 aria-hidden="true">Help text: text with structured content</h2>
+
+      <div id="ex3-em" class="card">
+        If the address entered is different to the one in your organisation settings:
+        <ul>
+            <li>your <a href="aria-describedby-flattening-things.html">organisation address</a> will be updated;</li>
+            <li>something else too.</li>
+        </ul>
+      </div>
+
+      <br>
+
+      <label for="ex3">Find your address</label><br/>
+      <input type="search" id="ex3" aria-describedby="ex3-em">
+
+      <p aria-hidden="true">Sounds something like:</p>
+      <blockquote class="sounds-like">Find your address, search text field.<br>If the address entered is different to the one in your organisation settings: bullet your organisation address will be updated; bullet something else too.</blockquote>
+    </main>
+  </body>
+</html>

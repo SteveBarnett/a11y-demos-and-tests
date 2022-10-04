@@ -19,3 +19,4 @@ a11y demos and tests
 - [Accessible data visualisation: text alternatives](accessible-data-visualisation-text-alternatives.html)
 - [It's about time](its-about-time.html)
 - [What the focus](what-the-focus.html)
+- [aria-describedby flattening things](aria-describedby-flattening-things.html)
