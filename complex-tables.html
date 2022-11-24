@@ -14,6 +14,8 @@
   <body class="show-ths">
     <h1>Complex tables</h1>
 
+		<h2 id="updated">One table, keeping existing structure</h2>
+	
 	<table>
 
 		<caption>Florida Auto tax rates</caption>
@@ -75,9 +77,9 @@
 
 	<hr />
 
-	<p>Moving State tax and County tax and letting them be <code>rowspan</code>ned</p>
+	<h2 id="jiggled">Moving State tax and County tax and letting them be <code>rowspan</code>ned</h2>
 
-		<table>
+	<table>
 
 		<caption>Florida Auto tax rates</caption>
 
@@ -129,6 +131,82 @@
 		</tr>
 
 	</table>
+
+	<hr />
+
+	<h2 id="split">Splitting it into several smaller tables</h2>
+
+	<p>We split up the big complex table into several smaller, snmpler, tables. We convert the "table sub-headers" into heading elements.</p>
+	<p>The repeated table headers could be visually hidden if required.</p>	
+	
+	<p>The pros: the divisions are visually clearer; screen reader users can navigate by the headings; each table is simpler.</p>
+	<p>The cons: now we have several tables; the data is a little less connected.</p>
+
+	<h3>Florida Auto tax rates</h3>
+
+	<h4>State tax</h4>
+
+		<table>
+
+		<tr>
+			<th scope="col">Jurisdiction name</th>
+			<th scope="col">Total sales</th>
+			<th scope="col">Non-taxable sales</th>
+			<th scope="col">Exempt sales</th>
+			<th scope="col">Taxable sales</th>
+			<th scope="col">Tax rate</th>
+			<th scope="col">Tax amount</th>
+		</tr>
+
+		<tr>
+			<th scope="row">FLORIDA (6.000%)</th>
+			<td class="numeric-data">$400.00</td>
+			<td class="numeric-data">$0.00</td>
+			<td class="numeric-data">$0.00</td>
+			<td class="numeric-data">$400.00</td>
+			<td class="numeric-data">6.000%</td>
+			<td class="numeric-data">$24.00</td>
+		</tr>
+
+		<tr>
+			<td colspan="6">Total state tax</td>
+			<td class="numeric-data">$24.00</td>
+		</tr>
+
+	</table>
+
+	<h4>County tax</h4>
+
+		<table>
+
+		<tr>
+			<th scope="col">Jurisdiction name</th>
+			<th scope="col">Total sales</th>
+			<th scope="col">Non-taxable sales</th>
+			<th scope="col">Exempt sales</th>
+			<th scope="col">Taxable sales</th>
+			<th scope="col">Tax rate</th>
+			<th scope="col">Tax amount</th>
+		</tr>
+
+		<tr>
+			<th scope="row">ORANGE (0.500%)</th>
+			<td class="numeric-data">$400.00</td>
+			<td class="numeric-data">$0.00</td>
+			<td class="numeric-data">$0.00</td>
+			<td class="numeric-data">$400.00</td>
+			<td class="numeric-data">0.500%</td>
+			<td class="numeric-data">$2.00</td>
+		</tr>
+
+		<tr>
+			<th colspan="6">Total county tax</td>
+			<td class="numeric-data">$2.00</td>
+		</tr>
+
+	</table>
+
+	<p>Total Florida auto tax rates: $26.00</p>
 
   </body>
 </html>
