@@ -472,6 +472,19 @@ th {
   text-align: right;
 }
 
+
+.show-ths th {
+  outline: solid 2px red;
+}
+
+.show-ths th[colspan] {
+  outline: solid 2px green;
+}
+
+.show-ths th[rowspan] {
+  outline: solid 2px blue;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
