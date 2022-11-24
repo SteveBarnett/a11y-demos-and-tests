@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Complex tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body class="show-ths">
+    <h1>Complex tables</h1>
+
+	<table>
+
+		<caption>Florida Auto tax rates</caption>
+
+		<tr>
+			<th scope="col">Jurisdiction name</th>
+			<th scope="col">Total sales</th>
+			<th scope="col">Non-taxable sales</th>
+			<th scope="col">Exempt sales</th>
+			<th scope="col">Taxable sales</th>
+			<th scope="col">Tax rate</th>
+			<th scope="col">Tax amount</th>
+		</tr>
+
+		<tr>
+			<th colspan="7" scope="col">State tax</th>
+		</tr>
+
+		<tr>
+			<th scope="row">FLORIDA (6.000%)</th>
+			<td>$400.00</td>
+			<td>$0.00</td>
+			<td>$0.00</td>
+			<td>$400.00</td>
+			<td>6.000%</td>
+			<td>$24.00</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Total state tax</th>
+			<td>$24.00</td>
+		</tr>
+
+		<tr>
+			<th colspan="7" scope="col">County tax</th>
+		</tr>
+
+		<tr>
+			<th scope="row">ORANGE (0.500%)</th>
+			<td>$400.00</td>
+			<td>$0.00</td>
+			<td>$0.00</td>
+			<td>$400.00</td>
+			<td>0.500%</td>
+			<td>$2.00</td>
+		</tr>
+
+		<tr>
+			<td colspan="7">Total Florida auto tax rates</td>
+		</tr>
+
+	</table>
+
+	<hr />
+
+	<p>Moving State tax and County tax and letting them be <code>rowspan</code>ned</p>
+
+	<table>
+
+		<caption>Florida Auto tax rates</caption>
+
+		<tr>
+			<th></th>
+			<th scope="col">Jurisdiction name</th>
+			<th scope="col">Total sales</th>
+			<th scope="col">Non-taxable sales</th>
+			<th scope="col">Exempt sales</th>
+			<th scope="col">Taxable sales</th>
+			<th scope="col">Tax rate</th>
+			<th scope="col">Tax amount</th>
+		</tr>
+		<tr>
+			<th rowspan="2" scope="row">State tax</th>
+			<th scope="row">FLORIDA (6.000%)</th>
+			<td>$400.00</td>
+			<td>$0.00</td>
+			<td>$0.00</td>
+			<td>$400.00</td>
+			<td>6.000%</td>
+			<td>$24.00</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Total state tax</th>
+			<td>$24.00</td>
+		</tr>
+
+		<tr>
+			<th rowspan="2" scope="row">County tax</th>
+			<th scope="row">ORANGE (0.500%)</th>
+			<td>$400.00</td>
+			<td>$0.00</td>
+			<td>$0.00</td>
+			<td>$400.00</td>
+			<td>0.500%</td>
+			<td>$2.00</td>
+		</tr>
+
+		<tr>
+			<td colspan="7">Total Florida auto tax rates</td>
+		</tr>
+
+	</table>
+
+  </body>
+</html>

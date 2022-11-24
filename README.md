@@ -21,3 +21,4 @@ a11y demos and tests
 - [What the focus](what-the-focus.html)
 - [aria-describedby flattening things](aria-describedby-flattening-things.html)
 - [Tables and links and things](tables-and-links-and-things.html)
+- [Complex tables](complex-tables.html)
