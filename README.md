@@ -22,3 +22,4 @@ a11y demos and tests
 - [aria-describedby flattening things](aria-describedby-flattening-things.html)
 - [Tables and links and things](tables-and-links-and-things.html)
 - [Complex tables](complex-tables.html)
+- [Making table rows clickable](making-table-rows-clickable.html)

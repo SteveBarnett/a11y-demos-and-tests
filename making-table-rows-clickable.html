@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Making table rows clickable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=20221219" />
+  </head>
+
+  <body class="skinny">
+    <h1>Making table rows clickable</h1>
+
+    <p aria-hidden="true">
+      Note: some content on this page has had
+      <code>aria-hidden="true"</code> added for more precise testing.
+    </p>
+
+    <h2>Our example table</h2>
+
+    <p>For clarity, we'll use a short table of invoices. The Reference column contains a unique identifier for each row.</p>
+
+    <p>In situations where we don't have a unique identifier for each row, it might be worth asking if we there should be one. Is it clear what each row is referring to?</p>
+
+    <table>
+      <tr>
+        <th>Reference</th>
+        <th>To</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>INV-004</td>
+        <td>Scarlett Papava</td>
+        <td>Plane ticket</td>
+        <td>1,000</td>
+      </tr>
+      <tr>
+        <td>INV-008</td>
+        <td>Alec Trevelyan</td>
+        <td>Statue with two faces</td>
+        <td>500</td>
+      </tr>
+    </table>
+
+    <h2>Make it clickable!</h2>
+
+    <p>Here are some things to consider for best usability and accessibility.</p>
+
+    <ul>
+      <li>Link affordance: the link looks like a link.</li>
+      <li>Link text: the link text describes the link destination.</li>
+      <li>Table semantics: the table keeps all its semantics.</li>
+      <li>Keyboard interactions: only interactive elements receive focus.</li>
+      <li>Pointer interactions: links can be opened in a new tab. (Note that buttons can not).</li>
+    </ul>
+
+    <p>Some options:</p>
+
+    <ul>
+      <li><a href="#one-cell-a-link">make one cell contents a link to the invoice</a>;</li>
+      <li><a href="#every-cell-a-link">make every cell's contents a link to the invoice</a>;</li>
+      <li><a href="#wrap-each-row">wrap each row in a link</a>;</li>
+      <li><a href="#wrap-each-row-of-cells">wrap each row of cells in a link</a>;</li>
+      <li><a href="#give-rows-a-role">give each row a role of link</a>.</li>
+    </ul>
+
+    <h3 tabindex="-1" id="one-cell-a-link">Option: make one cell contents a link to the invoice</h3>
+
+    <p>The DOM looks like: <code>table > tr > td > a</code>.</p>
+
+    <ul>
+      <li>✔️ Link affordance: the link looks like a link.</li>
+      <li>✔️ Link text: the link text describes the link destination.</li>
+      <li>✔️ Table semantics: the table keeps all its semantics.</li>
+      <li>✔️ Keyboard interactions: only interactive elements receive focus.</li>
+      <li>✔️ Pointer interactions: links can be opened in a new tab.</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Reference</th>
+        <th>To</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td><a href="#one-cell-a-link">INV-004</a></td>
+        <td>Scarlett Papava</td>
+        <td>Plane ticket</td>
+        <td>1,000</td>
+      </tr>
+      <tr>
+        <td><a href="#one-cell-a-link">INV-008</a></td>
+        <td>Alec Trevelyan</td>
+        <td>Statue with two faces</td>
+        <td>500</td>
+      </tr>
+    </table>
+
+    <h3 tabindex="-1" id="every-cell-a-link">Option: make every cell's contents a link to the invoice</h3>
+
+    <p>The DOM looks like: <code>table > tr > td > a</code>.</p>
+
+    <ul>
+      <li>✔️ Link affordance: the links look like links.</li>
+      <li>🚫 Link text: the link text does not describes the link destination for each link.</li>
+      <li>✔️ Table semantics: the table keeps all its semantics.</li>
+      <li>✔️ Keyboard interactions: only interactive elements receive focus.</li>
+      <li>✔️ Pointer interactions: links can be opened in a new tab.</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Reference</th>
+        <th>To</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td><a href="#every-cell-a-link">INV-004</a></td>
+        <td><a href="#every-cell-a-link">Scarlett Papava</a></td>
+        <td><a href="#every-cell-a-link">Plane ticket</a></td>
+        <td><a href="#every-cell-a-link">1,000</a></td>
+      </tr>
+      <tr>
+        <td><a href="#every-cell-a-link">INV-008</a></td>
+        <td><a href="#every-cell-a-link">Alec Trevelyan</a></td>
+        <td><a href="#every-cell-a-link">Statue with two faces</a></td>
+        <td><a href="#every-cell-a-link">500</a></td>
+      </tr>
+    </table>
+
+    <h3 tabindex="-1" id="wrap-each-row">Option: wrap each row in a link</h3>
+
+    <p>The DOM looks like: <code>table > a > tr > td</code>. This is invalid HTML, so it causes errors.</p>
+
+    <ul>
+      <li>🚫 Link affordance: the links are rendered empty, outside the table.</li>
+      <li>🚫 Link text: the link text is empty.</li>
+      <li>✔️ Table semantics: the table keeps all its semantics.</li>
+      <li>🚫 Keyboard interactions: the links still receive focus, but they're empty.</li>
+      <li>🚫 Pointer interactions: the links have no visible target.</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Reference</th>
+        <th>To</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <a href="#wrap-each-row">
+        <tr>
+          <td>INV-004</td>
+          <td>Scarlett Papava</td>
+          <td>Plane ticket</td>
+          <td>1,000</td>
+        </tr>
+      </a>
+      <a href="#wrap-each-row">
+        <tr>
+          <td>INV-008</td>
+          <td>Alec Trevelyan</td>
+          <td>Statue with two faces</td>
+          <td>500</td>
+        </tr>
+      </a>
+    </table>
+
+    <h3 tabindex="-1" id="wrap-each-row-of-cells">Option: wrap each row of cells in a link</h3>
+
+    <p>The DOM looks like: <code>table > tr > a > td</code>. This is invalid HTML, so it causes errors.</p>
+
+    <ul>
+      <li>🚫 Link affordance: the links are rendered empty, outside the table.</li>
+      <li>🚫 Link text: the link text is empty.</li>
+      <li>✔️ Table semantics: the table keeps all its semantics.</li>
+      <li>🚫 Keyboard interactions: the links still receive focus, but they're empty.</li>
+      <li>🚫 Pointer interactions: the links have no visible target.</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Reference</th>
+        <th>To</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <a href="#wrap-each-row">
+          <td>INV-004</td>
+          <td>Scarlett Papava</td>
+          <td>Plane ticket</td>
+          <td>1,000</td>
+        </a>
+      </tr>
+      <tr>
+        <a href="#wrap-each-row">
+          <td>INV-008</td>
+          <td>Alec Trevelyan</td>
+          <td>Statue with two faces</td>
+          <td>500</td>
+        </a>
+      </tr>
+    </table>
+
+    <h3 tabindex="-1" id="give-rows-a-role">Option: give each row a role of link</h3>
+
+    <p>For this option, we need to add keyboard interactivity to each row, add JavaScript to handle the click events, and add hover styles.</p>
+
+    <ul>
+      <li>🚫 Link affordance: users have to hover or tab to the link to find it. The rows-as-link don't look like links.</li>
+      <li>🥴 Link text: the link text is the text of all the cells in the row. It's a bit too long, and not very clear.</li>
+      <li>🚫 Table semantics: the table semantics are broken. The rows have been replaced by links.</li>
+      <li>🥴 Keyboard interactions: only interactive elements receive focus. But... table rows aren't usually interactive, so this is confusing.</li>
+      <li>🚫 Pointer interactions: links can't be opened in a new tab. Only <code>a</code> elements with an <code>[href]</code> can be opened in a new tab.</li>
+    </ul>
+
+    <table id="give-rows-a-role-table">
+      <tr>
+        <th>Reference</th>
+        <th>To</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      <tr role="link" href="#give-rows-a-role" tabindex="0">
+        <td>INV-004</td>
+        <td>Scarlett Papava</td>
+        <td>Plane ticket</td>
+        <td>1,000</td>
+      </tr>
+      <tr role="link" href="#give-rows-a-role" tabindex="0">
+        <td>INV-008</td>
+        <td>Alec Trevelyan</td>
+        <td>Statue with two faces</td>
+        <td>500</td>
+      </tr>
+    </table>
+
+  <script>
+    const giveRowsARoleTable = document.getElementById('give-rows-a-role-table');
+
+    giveRowsARoleTable.addEventListener('click', e => {
+      const target = e.target.parentElement.getAttribute('href');
+      if(target) {
+        window.location = target;
+      };
+    });
+  </script>
+  </body>
+</html>
