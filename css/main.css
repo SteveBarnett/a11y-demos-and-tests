@@ -489,6 +489,20 @@ th {
   outline: solid 2px #999;
 }
 
+h1:target:before, h2:target:before, h3:target:before, h4:target:before {
+  content:"→";
+  margin-right:0.25em
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+tr[role="link"]:hover {
+  outline: solid 2px blue;
+  cursor: pointer;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
