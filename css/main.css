@@ -503,6 +503,37 @@ tr[role="link"]:hover {
   cursor: pointer;
 }
 
+.redacted p {
+  font-family: 'Redacted Script', cursive;
+}
+
+.headings-demo h1, .headings-demo h2, .headings-demo h3, .headings-demo h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.headings-demo-section {
+  outline: solid 3px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.headings-demo-section {
+  outline-color: red;
+}
+
+.headings-demo-section .headings-demo-section {
+  outline-color: green;
+}
+
+.headings-demo-section .headings-demo-section .headings-demo-section  {
+  outline-color: blue;
+}
+
+.headings-demo-section .headings-demo-section .headings-demo-section .headings-demo-section {
+  outline-color: grey;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

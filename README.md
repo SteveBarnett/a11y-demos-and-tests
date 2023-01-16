@@ -23,3 +23,4 @@ a11y demos and tests
 - [Tables and links and things](tables-and-links-and-things.html)
 - [Complex tables](complex-tables.html)
 - [Making table rows clickable](making-table-rows-clickable.html)
+- [More accessible headings](more-accessible-headings.html)
