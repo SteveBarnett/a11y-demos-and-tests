@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dynamic title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=202301017" />
+  </head>
+
+  <body>
+
+    <main>
+      
+      <h1>Dynamic title</h1>
+
+      <p>The <code>title</code> updates after 2 seconds, then again after another 5 seconds</p>
+
+    </main>
+
+    <script>
+      setTimeout(() => (document.title = "Updated title 1"), 2000);
+      setTimeout(() => (document.title = "Updated title 2"), 7000);
+    </script>
+
+  </body>
+</html>
