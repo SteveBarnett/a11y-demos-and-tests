@@ -534,6 +534,18 @@ tr[role="link"]:hover {
   outline-color: grey;
 }
 
+.headings-demo #one:target .headings-demo-section .headings-demo-section {
+  display: none;
+}
+
+.headings-demo #two:target .headings-demo-section .headings-demo-section .headings-demo-section {
+  display: none;
+}      
+
+.headings-demo #three:target .headings-demo-section .headings-demo-section .headings-demo-section .headings-demo-section {
+  display: none;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
