@@ -6,54 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/main.css?v=202301017" />
+    <link rel="stylesheet" href="./css/main.css?v=202301020" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Redacted+Script&display=swap" rel="stylesheet">
   </head>
 
-  <body class="redacted headings-demo">
+  <body class="headings-demo">
 
     <main>
       
-      <div class="headings-demo-section">
-        
-      <h1>Heading level one</h1>
+      <!-- these divs are for magic show/hide with :target -->
+      <div id="one">
+      <a href="#one">Show heading level one</a>,
+      <a href="#two">Show heading level twos</a>,
+      <a href="#three">Show heading level threes</a>,
+      <a href="more-accessible-headings.html">Show heading level fours</a>.
+      <div id="two">
+      <div id="three">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="headings-demo-section redacted">
+          
+        <h1>Heading level one</h1>
 
-        <div class="headings-demo-section">
-          <h2>Heading level two</h2>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
           <div class="headings-demo-section">
-              <h3>Heading level three</h3>
+            <h2>Heading level two</h2>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <div class="headings-demo-section">
+                <h3>Heading level three</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="headings-demo-section">
+                <h3>Heading level three</h3>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <div class="headings-demo-section">
+                    <h4>Heading level four</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
           </div>
 
           <div class="headings-demo-section">
-              <h3>Heading level three</h3>
+            <h2>Heading level two</h2>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-              <div class="headings-demo-section">
-                  <h4>Heading level four</h4>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
 
         </div>
 
-        <div class="headings-demo-section">
-          <h2>Heading level two</h2>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-
+      </div>
+      </div>
       </div>
 
     </main>
