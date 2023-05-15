@@ -25,3 +25,4 @@ a11y demos and tests
 - [Making table rows clickable](making-table-rows-clickable.html)
 - [More accessible headings](more-accessible-headings.html)
 - [Dynamic title](dynamic-title.html)
+- [Tables with things in them](tables-with-things-in-them.html)
