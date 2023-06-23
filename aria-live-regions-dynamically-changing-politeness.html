@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>ARIA Live regions: dynamicallly changing politeness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=202301017" />
+  </head>
+
+  <body>
+
+    <main>
+      
+      <h1 aria-hidden="true">ARIA Live regions: dynamicallly changing politeness</h1>
+
+      <p aria-hidden="true">
+        Most of the content on this page has <code>aria-hidden="true"</code> for
+        easier screen reader testing
+      </p>
+
+      <h2 aria-hidden="true">
+        With <code>aria-live="polite" role="status"</code> already in the DOM.
+      </h2>
+
+      <div aria-live="polite" id="polite">
+      </div>
+
+      <div aria-live="assertive" id="assertive">
+      </div>
+
+      <script>
+        const politeRegion = document.querySelector("#polite");
+        const assertiveRegion = document.querySelector("#assertive");
+
+        setTimeout(() => (politeRegion.innerHTML = "Polite region announcement"), 3000);
+        setTimeout(() => (assertiveRegion.innerHTML = "Assertive region announcement"), 6000);
+        // setTimeout(() => (politeRegion.setAttribute("aria-live", "assertive")), 7000);
+        // setTimeout(() => (politeRegion.innerHTML = "Dynamically changed to assertive region announcement"), 10000);
+        setTimeout(() => {
+          politeRegion.setAttribute("aria-live", "assertive");
+          politeRegion.innerHTML = "Dynamically changed to assertive region announcement";
+        }
+        , 9000);
+      
+      </script>
+
+    </main>
+
+    <script>
+      
+    </script>
+
+  </body>
+</html>

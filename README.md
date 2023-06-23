@@ -26,3 +26,4 @@ a11y demos and tests
 - [More accessible headings](more-accessible-headings.html)
 - [Dynamic title](dynamic-title.html)
 - [Tables with things in them](tables-with-things-in-them.html)
+- [ARIA Live regions: dynamicallly changing politeness](aria-live-regions-dynamically-changing-politeness.html)
