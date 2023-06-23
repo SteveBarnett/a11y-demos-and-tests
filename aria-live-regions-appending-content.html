@@ -24,6 +24,8 @@
         Appending content quickly with the default <code>aria-atomic="false"</code>
       </h2>
 
+      <p>Expected behaviour: both messages are played in full. The second announcement includes the first.</p>
+
       <div aria-live="polite" id="appending">
       </div>
 
@@ -47,6 +49,8 @@
       <h2 aria-hidden="true">
         Appending content quickly with <code>aria-atomic="true"</code>
       </h2>
+
+      <p>Expected behaviour: both messages are played in full. The second announcement does not include the first.</p>
 
       <div aria-live="polite" id="appending-atomic">
       </div>
