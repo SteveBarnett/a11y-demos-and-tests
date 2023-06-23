@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>ARIA Live regions: multiple live regions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=202301017" />
+  </head>
+
+  <body>
+
+    <main>
+      
+      <h1 aria-hidden="true">ARIA Live regions: multiple live regions</h1>
+
+      <p aria-hidden="true">
+        Most of the content on this page has <code>aria-hidden="true"</code> for
+        easier screen reader testing
+      </p>
+
+      <h2 aria-hidden="true">
+        First live region
+      </h2>
+
+      <div aria-live="polite" id="one">
+      </div>
+
+      <h2 aria-hidden="true">
+        Second live region
+      </h2>
+
+      <div aria-live="polite" id="two">
+      </div>
+
+      <h2 aria-hidden="true">
+        Third live region
+      </h2>
+
+      <div aria-live="polite" id="three">
+      </div>
+
+      <h2 aria-hidden="true">
+        Fourth live region
+      </h2>
+
+      <div aria-live="polite" id="four">
+      </div>
+
+      <script>
+        const firstRegion = document.querySelector("#one");
+        const secondRegion = document.querySelector("#two");
+        const thirdRegion = document.querySelector("#three");
+        const fourthRegion = document.querySelector("#four");
+
+        setTimeout(() => (firstRegion.innerHTML = "First live region announcement, it's long enough to be interrupted by another announcement."), 5000);
+        setTimeout(() => (secondRegion.innerHTML = "Second live region announcement, it's long enough to be interrupted by another announcement."), 6000);
+        setTimeout(() => (thirdRegion.innerHTML = "Third live region announcement, it's long enough to be interrupted by another announcement."), 7000);
+        setTimeout(() => (fourthRegion.innerHTML = "Fourth live region announcement, it's long enough to be interrupted by another announcement."), 8000);
+      
+      </script>
+
+    </main>
+
+    <script>
+      
+    </script>
+
+  </body>
+</html>

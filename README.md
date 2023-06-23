@@ -27,3 +27,4 @@ a11y demos and tests
 - [Dynamic title](dynamic-title.html)
 - [Tables with things in them](tables-with-things-in-them.html)
 - [ARIA Live regions: dynamicallly changing politeness](aria-live-regions-dynamically-changing-politeness.html)
+- [ARIA Live regions: multiple live regions](aria-live-regions-multiple-live-regions.html)
