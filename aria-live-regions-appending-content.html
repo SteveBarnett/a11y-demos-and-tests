@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>ARIA Live regions: appending content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=202301017" />
+  </head>
+
+  <body>
+
+    <main>
+      
+      <h1 aria-hidden="true">ARIA Live regions: appending vs replacing content</h1>
+
+      <p aria-hidden="true">
+        Most of the content on this page has <code>aria-hidden="true"</code> for
+        easier screen reader testing
+      </p>
+
+      <h2 aria-hidden="true">
+        Appending content quickly with the default <code>aria-atomic="false"</code>
+      </h2>
+
+      <div aria-live="polite" id="appending">
+      </div>
+
+      <button id="appending-button">Announce</button>
+
+      <script>
+        const appending = document.querySelector("#appending");
+        const appendingButton = document.querySelector("#appending-button");
+
+        appendingButton.addEventListener('click', () => {
+          appending.innerHTML = "Initial announcement, it's long enough to be interrupted by another announcement. "
+          setTimeout(
+            () => {
+              appending.innerHTML += "Second announcement, it's long enough to be interrupted by another announcement. "
+            },
+            500
+          );
+        });
+      </script>
+
+      <h2 aria-hidden="true">
+        Appending content quickly with <code>aria-atomic="true"</code>
+      </h2>
+
+      <div aria-live="polite" id="appending-atomic">
+      </div>
+
+      <button id="appending-atomic-button">Announce</button>
+
+      <script>
+        const appendingAtomic = document.querySelector("#appending-atomic");
+        const appendingAtomicButton = document.querySelector("#appending-atomic-button");
+
+        appendingAtomicButton.addEventListener('click', () => {
+          appendingAtomic.innerHTML = "Initial announcement, it's long enough to be interrupted by another announcement. "
+          setTimeout(
+            () => {
+              appendingAtomic.innerHTML += "Second announcement, it's long enough to be interrupted by another announcement. "
+            },
+            500
+          );
+        });
+      </script>
+    </main>
+
+    <script>
+      
+    </script>
+
+  </body>
+</html>
