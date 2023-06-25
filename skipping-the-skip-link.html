@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Skipping the skip link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=202301017" />
+
+    <style>
+      a[href="#main"] {
+        transform: translateY(-300%);
+        display: block;
+      }
+
+      a[href="#main"]:focus {
+        transform: none;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <a href="#main">Skip to main content</a>
+        
+    <h1 aria-hidden="true">Skipping the skip link</h1>
+
+    <main id="main">
+      <a href="./skipping-the-skip-link.html" id="navi">Second focusable element</a>
+    </main>
+
+    <script>
+      const navi = document.getElementById('navi');
+      navi.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        document.body.innerHTML = `
+            <a href="#main">Skip to main content</a>
+        
+            <h1 aria-hidden="true">Skipping the skip link, page 2</h1>
+
+            <main id="main">
+              <a href="./skipping-the-skip-link.html" id="navi">Second focusable element</a>
+            </main>
+          `;
+        history.pushState({}, "", 'skipping-the-skip-link-2.html');
+      });
+    </script>
+
+    <script>
+      
+    </script>
+
+  </body>
+</html>

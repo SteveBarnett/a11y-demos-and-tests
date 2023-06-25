@@ -29,3 +29,4 @@ a11y demos and tests
 - [ARIA Live regions: dynamicallly changing politeness](aria-live-regions-dynamically-changing-politeness.html)
 - [ARIA Live regions: multiple live regions](aria-live-regions-multiple-live-regions.html)
 - [ARIA Live regions: appending content](aria-live-regions-appending-content.html)
+- [Skipping the skip link](skipping-the-skip-link.html)
