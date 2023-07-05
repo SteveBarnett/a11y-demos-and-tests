@@ -31,3 +31,4 @@ a11y demos and tests
 - [ARIA Live regions: appending content](aria-live-regions-appending-content.html)
 - [Skipping the skip link](skipping-the-skip-link.html)
 - [Tables and colspans](tables-and-colspans.html)
+- [Empty cell testing](empty-cell-testing.html)
