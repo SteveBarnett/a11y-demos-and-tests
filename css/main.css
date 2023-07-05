@@ -489,6 +489,24 @@ th {
   outline: solid 2px #999;
 }
 
+.hidden-colspan-crouching-dragon {
+/*  .sr-only */
+/*but this collapses layout*/
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.double-up-colspan {
+  
+}
+
 h1:target:before, h2:target:before, h3:target:before, h4:target:before {
   content:"→";
   margin-right:0.25em

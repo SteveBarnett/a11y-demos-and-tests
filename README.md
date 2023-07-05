@@ -30,3 +30,4 @@ a11y demos and tests
 - [ARIA Live regions: multiple live regions](aria-live-regions-multiple-live-regions.html)
 - [ARIA Live regions: appending content](aria-live-regions-appending-content.html)
 - [Skipping the skip link](skipping-the-skip-link.html)
+- [Tables and colspans](tables-and-colspans.html)

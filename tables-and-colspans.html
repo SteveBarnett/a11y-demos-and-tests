@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tables and colspans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css?v=20230706" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body class="show-ths">
+    <main>
+      <h1>Tables and colspans</h1>
+
+      <div aria-hidden="true">
+        <p>Note: some content on this page has had <code>aria-hidden="true"</code> added for more precise testing.</p>
+
+        <p><code>th</code> elements have a red outline, <code>th[colspan]</code> elements have a green outline.</p>
+      </div>
+
+      <h2 aria-hidden="true">Real <code>colspan</code>s</h2>
+
+      <table>
+        <caption>Choose your plan</caption>
+        <tr>
+          <th></th>
+          <th colspan="2">Good for something</th>
+          <th colspan="2">Good for something else</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Plan 1</th>
+          <th>Plan 2</th>
+          <th>Plan 3</th>
+          <th>Plan 4</th>
+        </tr>
+        <tr>
+          <th scope="row">Feature 1</td>
+          <td>Details of feature 1</td>
+          <td>Included</td>
+          <td>Included</td>
+          <td>Included</td>
+        </tr>
+        <tr>
+          <th scope="row">Feature 1</td>
+          <td>Details of feature 1</td>
+          <td>Included</td>
+          <td>Included</td>
+          <td>Included</td>
+        </tr>
+      </table>
+
+      <h2 aria-hidden="true">Real <code>colspan</code>s</h2>
+
+      <div aria-hidden="true">
+        <p>To make sure the table still makes semantic sense (and sense for screen reader users), we double up the column headers, then visually hide one of them.</p>
+        <p>We need to be careful if we set <code>display</code> on a column header <code>th</code>. This can change its implicit <code>role</code>, breaking the table semantics! We would need to add <code>role="columnheader"</code> so that the table keeps its semantics.</p>
+      </div>
+
+
+      <table>
+        <caption>Choose your plan</caption>
+        <tr>
+          <th></th>
+          <th class="double-up-colspan">Good for something</th>
+          <th class="hidden-colspan-crouching-dragon">Good for something</th>
+          <th class="hidden-colspan-crouching-dragon">Good for something else</th>
+          <th class="double-up-colspan">Good for something else</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Plan 1</th>
+          <th>Plan 2</th>
+          <th>Plan 3</th>
+          <th>Plan 4</th>
+        </tr>
+        <tr>
+          <th scope="row">Feature 1</td>
+          <td>Details of feature 1</td>
+          <td>Included</td>
+          <td>Included</td>
+          <td>Included</td>
+        </tr>
+        <tr>
+          <th scope="row">Feature 1</td>
+          <td>Details of feature 1</td>
+          <td>Included</td>
+          <td>Included</td>
+          <td>Included</td>
+        </tr>
+      </table>
+
+    </main>
+  </body>
+</html>
