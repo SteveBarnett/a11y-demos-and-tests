@@ -32,3 +32,4 @@ a11y demos and tests
 - [Skipping the skip link](skipping-the-skip-link.html)
 - [Tables and colspans](tables-and-colspans.html)
 - [Empty cell testing](empty-cell-testing.html)
+- [Label in name testing for voice control](label-in-name-testing-for-voice-control.html)

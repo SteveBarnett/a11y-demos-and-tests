@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Label in name testing for voice control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Label in name testing for voice control</h1>
+
+      <div aria-hidden="true">
+        <p>Note: some content on this page has had <code>aria-hidden="true"</code> added for more precise testing.</p>
+      </div>
+
+      <a href="#first">Read more <span class="sr-only">of the first link</span></a><br>
+      <span aria-hidden="true">Visually hidden appended link text: "of the first link"</span><br /><br />
+
+      <a href="#second">Read more <span class="sr-only">of the second link</span></a><br>
+      <span aria-hidden="true">Visually hidden appended link text: "of the second link"</span><br /><br />
+
+      <a href="#third">Read more <span class="sr-only">of the third link</span></a><br>
+      <span aria-hidden="true">Visually hidden appended link text: "of the third link"</span><br /><br />
+
+      <!-- <a href="#justreadmore">Read more</span></a><br /><br /> -->
+
+      <a href="#unique">Unique</span></a><br><span aria-hidden="true">no visually hidden link text</span><br /><br />
+    </main>
+  </body>
+</html>
