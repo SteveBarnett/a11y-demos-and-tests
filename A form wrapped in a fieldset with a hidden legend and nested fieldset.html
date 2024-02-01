@@ -1,23 +1,8 @@
 <h1>A form wrapped in a <code>fieldset</code> with a hidden <code>legend</code> and nested <code>fieldset</code></h1>
 
-<style type="text/css">
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-</style>
-
 <fieldset>
   
-<legend class="visually-hidden">Save your activities</legend>
+<legend aria-hidden="true">Save your activities</legend>
 
 <form method="get" action="a form with a fieldset.html">
   
