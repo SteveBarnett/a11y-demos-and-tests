@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css?d=20240223" />
     <link rel="stylesheet" href="css/govuk.css" />
+    <link rel="stylesheet" href="css/rpf.css" />
   </head>
 
   <body>
@@ -50,13 +51,34 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">On or off</legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="on" name="on-or-off" type="radio" value="england">
+            <input class="govuk-radios__input" id="on" name="on-or-off" type="radio" value="on">
             <label class="govuk-label govuk-radios__label" for="on">On</label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="off" name="on-or-off" type="radio" value="scotland">
+            <input class="govuk-radios__input" id="off" name="on-or-off" type="radio" value="off">
             <label class="govuk-label govuk-radios__label" for="off">Off</label>
           </div>
+        </div>
+      </fieldset>
+
+      <h3>Custom appearance (RPF)</h3>
+
+
+      <fieldset>
+        <legend class="label col-12">Inside or outside</legend>
+        
+        <div class="radios-item col-2">
+          <label for="inside" class="input">
+            <input id="inside" type="radio" name="inside-or-outside" value="inside">
+            <span class="label">inside</span>
+          </label>
+        </div>
+        
+        <div class="radios-item col-2">
+          <label for="outside" class="input">
+            <input id="outside" type="radio" name="inside-or-outside" value="outside">
+            <span class="label">outside</span>
+          </label>
         </div>
       </fieldset>
 
