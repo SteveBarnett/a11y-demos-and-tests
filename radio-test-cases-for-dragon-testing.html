@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Radio test cases for Dragon testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css?d=20240223" />
+    <link rel="stylesheet" href="css/govuk.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Radios test cases for Dragon testing</h1>
+
+      <h2>Radios</h2>
+
+      <h3>Standard</h3>
+
+      <fieldset>
+        <legend>Left or right</legend>
+
+        <input type="radio" id="left" name="left-or-right" value="left" />
+        <label for="left">left</label>
+
+        <input type="radio" id="right" name="left-or-right" value="right" />
+        <label for="right">right</label>
+      </fieldset>
+
+      <h3>Implicit labels</h3>
+
+      <fieldset>
+        <legend>Up or down</legend>
+
+        <label for="up">
+          <input type="radio" id="up" name="up-or-down" value="up" />
+          up
+        </label>
+
+        <label for="down">
+          <input type="radio" id="down" name="up-or-down" value="down" />
+          down
+        </label>
+      </fieldset>
+
+      <h3>Custom appearance</h3>
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">On or off</legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="on" name="on-or-off" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="on">On</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="off" name="on-or-off" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="off">Off</label>
+          </div>
+        </div>
+      </fieldset>
+
+<!-- 
+      <h2>Checkboxes</h2>
+      
+      <h3>Standard</h3>
+
+
+
+      <h3>Implicit labels</h3>
+
+
+
+      <h3>Custom appearance</h3>
+ -->
+    
+    </main>
+  </body>
+</html>
