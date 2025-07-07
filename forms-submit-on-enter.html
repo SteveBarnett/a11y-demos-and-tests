@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forms submit on Enter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1>Forms submit on <kbd>Enter</kbd></h1>
+
+    <p id="display-fname" hidden>Your name is <strong id="fname-get"></strong></p>
+
+    <form method="GET">
+      <label for="fname">First name</label>
+      <input type="text" name="fname" id="fname">
+
+      <p>There are two ways to submit the form.</p>
+
+      <ul>
+        <li>Explicitly, by pressing the Submit button</li>
+        <li>Implicitly, by pressing <kbd>Enter</kbd> while something has focus</li>
+      </ul>
+
+      <p>Focus the text box, then press <kbd>Enter</kbd>.</p>
+
+      <button>Submit</button>
+    </form>
+
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      const fnameParam = params.get("fname");
+      
+      if(fnameParam) {
+        const fnameGet = document.querySelector('#fname-get');
+        fnameGet.innerHTML = fnameParam;
+        const fnameDisplay = document.querySelector('#display-fname');
+        fnameDisplay.removeAttribute('hidden');
+
+        const fnameInput = document.querySelector('#fname');
+        fnameInput.value = fnameGet.innerText;
+      }
+
+    </script>
+  </body>
+</html>

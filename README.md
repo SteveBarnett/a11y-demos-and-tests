@@ -33,3 +33,4 @@ a11y demos and tests
 - [Tables and colspans](tables-and-colspans.html)
 - [Empty cell testing](empty-cell-testing.html)
 - [Label in name testing for voice control](label-in-name-testing-for-voice-control.html)
+- [Forms submit on Enter](forms-submit-on-enter.html)
