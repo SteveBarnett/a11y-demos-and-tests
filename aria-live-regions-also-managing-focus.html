@@ -19,6 +19,14 @@
         Test 1: Send focus to heading, then immediately inject text into polite live region
       </h2>
 
+      <p>Observed behaviour:</p>
+
+      <ul>
+        <li>VO on MacOS: heading, then live region</li>
+        <li>NVDA: live region, then heading (?)</li>
+        <li>JAWS: heading, then live region</li>
+      </ul>
+
       <h3 tabindex="-1" id="test1heading">A medium length heading</h3>
 
       <div aria-live="polite" class="polite" id="test1liveregion">
@@ -43,7 +51,14 @@
         Test 2: Send focus to heading, then immediately inject text into assertive live region
       </h2>
 
-      
+      <p>Observed behaviour:</p>
+
+      <ul>
+        <li>VO on MacOS: heading, assertive live region ignored (!)</li>
+        <li>NVDA: assertive live region, then heading</li>
+        <li>JAWS: heading, then assertive live region</li>
+      </ul>
+
 
       <h3 tabindex="-1" id="test2heading">A medium length heading</h3>
 
@@ -70,7 +85,13 @@
         Test 3: Inject text into polite live region, then immediately send focus to heading
       </h2>
 
-      
+      <p>Observed behaviour:</p>
+
+      <ul>
+        <li>VO on MacOS: heading, then live region</li>
+        <li>NVDA: live region, then heading</li>
+        <li>JAWS: heading, then live region</li>
+      </ul>
 
       <h3 tabindex="-1" id="test3heading">A medium length heading</h3>
 
@@ -97,7 +118,13 @@
         Test 4: Inject text into assertive live region, then immediately send focus to heading
       </h2>
 
-      
+      <p>Observed behaviour:</p>
+
+      <ul>
+        <li>VO on MacOS: heading, assertive live region ignored (!)</li>
+        <li>NVDA: assertive live region, then heading</li>
+        <li>JAWS: heading, then assertive live region</li>
+      </ul>
 
       <h3 tabindex="-1" id="test4heading">A medium length heading</h3>
 
@@ -117,8 +144,6 @@
         });
       </script>
       </head>
-
-
 
     </main>
 
