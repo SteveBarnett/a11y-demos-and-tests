@@ -564,6 +564,12 @@ tr[role="link"]:hover {
   display: none;
 }
 
+h1:focus, h2:focus, h3:focus, h4:focus, h5:focus, h6:focus, button:focus {
+  outline: solid 2px blue;
+  outline-offset: 2px;
+  /*box-shadow: 0 0 0 0.25rem;*/
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
