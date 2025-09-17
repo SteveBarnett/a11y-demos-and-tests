@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-nz">
+  <head>
+    <meta charset="utf-8" />
+    <title>ARIA Live regions: also managing focus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css?v=20250918" />
+  </head>
+
+  <body>
+
+    <main>
+      
+      <h1>ARIA Live regions: also managing focus</h1>
+
+      <h2>
+        Test 1: Send focus to heading, then immediately inject text into polite live region
+      </h2>
+
+      <p>Expected behaviour: heading announced, then live region announced.<br>
+      Observed behaviour: heading announced, then live region announced.</p>
+
+      <h3 tabindex="-1" id="test1heading">A medium length heading</h3>
+
+      <div aria-live="polite" id="test1liveregion">
+      </div>
+
+      <button id="test1button">Test 1</button>
+
+      <script>
+        const test1heading = document.querySelector('#test1heading');
+        const test1appending = document.querySelector("#test1liveregion");
+        const test1appendingButton = document.querySelector("#test1button");
+
+        test1appendingButton.addEventListener('click', () => {
+          test1heading.focus()
+          test1appending.innerHTML = "A polite live region announcement."
+        });
+      </script>
+
+      <hr>
+          
+      <h2>
+        Test 2: Send focus to heading, then immediately inject text into assertive live region
+      </h2>
+
+      <p>Expected behaviour: heading interrupted, live region announced.<br>
+      Observed behaviour: heading announced, live region ignored (!).</p>
+
+      <h3 tabindex="-1" id="test2heading">A medium length heading</h3>
+
+      <div aria-live="assertive" id="test2liveregion">
+      </div>
+
+      <button id="test2button">Test 2</button>
+
+      <script>
+        const test2heading = document.querySelector('#test2heading');
+        const test2appending = document.querySelector("#test2liveregion");
+        const test2appendingButton = document.querySelector("#test2button");
+
+        test2appendingButton.addEventListener('click', () => {
+          test2heading.focus()
+          test2appending.innerHTML = "An assertive live region announcement."
+        });
+      </script>
+      </head>
+
+      <hr>
+          
+      <h2>
+        Test 3: Inject text into polite live region, then immediately send focus to heading
+      </h2>
+
+      <p>Expected behaviour: Live region interrupted, heading announced.<br>
+      Observed behaviour: heading announced, then live region announced.</p>
+
+      <h3 tabindex="-1" id="test3heading">A medium length heading</h3>
+
+      <div aria-live="polite" id="test3liveregion">
+      </div>
+
+      <button id="test3button">Test 3</button>
+
+      <script>
+        const test3heading = document.querySelector('#test3heading');
+        const test3appending = document.querySelector("#test3liveregion");
+        const test3appendingButton = document.querySelector("#test3button");
+
+        test3appendingButton.addEventListener('click', () => {
+          test3appending.innerHTML = "A polite live region announcement."
+          test3heading.focus()
+        });
+      </script>
+      </head>
+
+      <hr>
+          
+      <h2>
+        Test 4: Inject text into assertive live region, then immediately send focus to heading
+      </h2>
+
+      <p>Expected behaviour: Live region interrupted, heading announced.<br>
+      Observed behaviour: heading announced, live region ignored (!).</p>
+
+      <h3 tabindex="-1" id="test4heading">A medium length heading</h3>
+
+      <div aria-live="assertive" id="test4liveregion">
+      </div>
+
+      <button id="test4button">Test 4</button>
+
+      <script>
+        const test4heading = document.querySelector('#test4heading');
+        const test4appending = document.querySelector("#test4liveregion");
+        const test4appendingButton = document.querySelector("#test4button");
+
+        test4appendingButton.addEventListener('click', () => {
+          test4appending.innerHTML = "An assertive live region announcement."
+          test4heading.focus()
+        });
+      </script>
+      </head>
+
+
+
+    </main>
+
+  </body>
+</html>
